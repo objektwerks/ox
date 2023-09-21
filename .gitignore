@@ -1,0 +1,7 @@
+.*
+!.gitignore
+!.jvmopts
+project/metals.sbt
+project/project/
+project/target/
+target/
