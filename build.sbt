@@ -1,4 +1,4 @@
-name := "virtual.threads"
+name := "ox"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
 scalaVersion := "3.3.1"
