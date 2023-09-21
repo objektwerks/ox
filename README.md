@@ -1,8 +1,6 @@
-Virtual Threads
----------------
->JDK 21 virtual threads, scoped values and structured concurrency feature tests using Scala 3.
-
->A feature test for the Software Mill **Ox** library is included as well.
+Ox
+--
+>Software Mill Ox feature tests using Scala 3.
 
 Test
 ----
