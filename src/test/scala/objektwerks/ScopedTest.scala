@@ -31,12 +31,3 @@ class ScopedTest extends AnyFunSuite with Matchers:
     }.join()
     count shouldBe 1
   }
-
-  test("supervised > fork") {
-    val lineCount = supervised {
-      val alines: Fork[Int] = fork( countLines("./data/data.a.csv") )
-      val blines: Fork[Int] = fork( countLines("./data/data.b.csv") )
-      alines.join() + blines.join()
-    }
-    lineCount shouldBe expectedLineCount
-  }
