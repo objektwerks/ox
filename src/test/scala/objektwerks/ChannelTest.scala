@@ -6,8 +6,8 @@ import org.scalatest.matchers.should.Matchers
 import ox.*
 import ox.channels.*
 
-class ChannelTest extends AnyFunSuite with Matchers:
-  test("scoped > fork > channel > map") {
+final class ChannelTest extends AnyFunSuite with Matchers:
+  test("scoped > fork > channel > map"):
     scoped {
       val channel = Channel[Int]()
       fork {
@@ -19,9 +19,8 @@ class ChannelTest extends AnyFunSuite with Matchers:
         .map(i => i * i)
         .foreach(i => println(s"*** channel map squared $i by ${Math.sqrt(i).toInt}"))
     }
-  }
 
-  test("supervised > fork > channel > transform") {
+  test("supervised > fork > channel > transform"):
     supervised {
       val channel = Channel[Int]()
       fork {
@@ -33,4 +32,3 @@ class ChannelTest extends AnyFunSuite with Matchers:
         .transform(_.filter(i => i % 2 == 0).map(i => i * i))
         .foreach(i => println(s"*** channel transform squared $i by ${Math.sqrt(i).toInt}"))
     }
-  }
