@@ -9,17 +9,16 @@ import ox.*
 
 import FileLineCountTask.*
 
-class ScopedTest extends AnyFunSuite with Matchers:
-  test("scoped > fork") {
+final class ScopedTest extends AnyFunSuite with Matchers:
+  test("scoped > fork"):
     val lineCount = scoped {
       val alines: Fork[Int] = fork( countLines("./data/data.a.csv") )
       val blines: Fork[Int] = fork( countLines("./data/data.b.csv") )
       alines.join() + blines.join()
     }
     lineCount shouldBe expectedLineCount
-  }
 
-  test("scoped > fork > scoped value") {
+  test("scoped > fork > scoped value"):
     val license = ForkLocal("")
     val uuid = UUID.randomUUID.toString
     val count = scoped {
@@ -30,4 +29,3 @@ class ScopedTest extends AnyFunSuite with Matchers:
       }
     }.join()
     count shouldBe 1
-  }
