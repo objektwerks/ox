@@ -22,4 +22,5 @@ Resources
 * [Loom Blocking](https://softwaremill.com/what-is-blocking-in-loom/)
 * [Virtual Threads Design](https://blogs.oracle.com/javamagazine/post/java-virtual-threads)
 * [Ultimate Guide to Virtual Threads](https://blog.rockthejvm.com/ultimate-guide-to-java-virtual-threads/)
+* [virtual.threads](https://github.com/objektwerks/virtual.threads)
 * [Odersky on Async](https://github.com/lampepfl/async/)
