@@ -13,6 +13,7 @@ Resources
 * [Software Mill Go Channels in Scala](https://softwaremill.com/go-like-channels-using-project-loom-and-scala/)
 * [Software Mill More On Go Channels in Scala](https://softwaremill.com/go-like-channels-in-scala-receive-send-and-default-clauses/)
 * [Software Mill Ox: Supervision, Kafka and Java 21](https://softwaremill.com/supervision-kafka-and-java-21-whats-new-in-ox/)
+* [Ox-Jdbc Gist](https://gist.github.com/lbialy/320b28dba6575cef3af8173e390abe54)
 * [Java 21 Virtual Threads](https://www.youtube.com/watch?v=5E0LU85EnTI)
 * [Java 21 Concurrency Guide](https://docs.oracle.com/en/java/javase/21/core/concurrency.html#GUID-59C16A2D-57CE-4C83-9D6F-91A48E01E3C6)
 * [Virtual Threads: JEPS 425](openjdk.org/jeps/425)
