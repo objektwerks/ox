@@ -24,4 +24,4 @@ Resources
 * [Virtual Threads Design](https://blogs.oracle.com/javamagazine/post/java-virtual-threads)
 * [Ultimate Guide to Virtual Threads](https://blog.rockthejvm.com/ultimate-guide-to-java-virtual-threads/)
 * [virtual.threads](https://github.com/objektwerks/virtual.threads)
-* [Odersky Direct Style Strawman](https://github.com/lampepfl/gears)
+* [Odersky Direct Style Gears](https://github.com/lampepfl/gears)
