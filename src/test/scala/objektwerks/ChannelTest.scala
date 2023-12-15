@@ -15,9 +15,11 @@ final class ChannelTest extends AnyFunSuite with Matchers:
         channel.send(4)
         channel.done()
       }
-      channel
+      val values = channel
         .map(i => i * i)
-        .foreach(i => println(s"*** channel map squared $i by ${Math.sqrt(i).toInt}"))
+        .toList
+      values.head shouldBe 4
+      values.last shouldBe 16
     }
 
   test("supervised > fork > channel > transform"):
