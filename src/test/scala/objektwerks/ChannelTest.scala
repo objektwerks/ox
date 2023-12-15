@@ -30,7 +30,10 @@ final class ChannelTest extends AnyFunSuite with Matchers:
         channel.send(8)
         channel.done()
       }
-      channel
-        .transform(_.filter(i => i % 2 == 0).map(i => i * i))
-        .foreach(i => println(s"*** channel transform squared $i by ${Math.sqrt(i).toInt}"))
+      val values = channel
+        .transform(_.filter(i => i % 2 == 0)
+        .map(i => i * i))
+        .toList
+      values.head shouldBe 36
+      values.last shouldBe 64
     }
