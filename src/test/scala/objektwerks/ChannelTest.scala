@@ -26,6 +26,7 @@ final class ChannelTest extends AnyFunSuite with Matchers:
     supervised {
       val channel = Channel[Int]()
       fork {
+        channel.send(1)
         channel.send(6)
         channel.send(8)
         channel.send(11)
