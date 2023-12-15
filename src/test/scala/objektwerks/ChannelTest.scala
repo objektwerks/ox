@@ -28,6 +28,7 @@ final class ChannelTest extends AnyFunSuite with Matchers:
       fork {
         channel.send(6)
         channel.send(8)
+        channel.send(11)
         channel.done()
       }
       val values = channel
