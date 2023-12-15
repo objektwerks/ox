@@ -35,6 +35,7 @@ final class ChannelTest extends AnyFunSuite with Matchers:
         .transform(_.filter(i => i % 2 == 0)
         .map(i => i * i))
         .toList
+      values.length shouldBe 2
       values.head shouldBe 36
       values.last shouldBe 64
     }
