@@ -1,6 +1,6 @@
 Ox
 --
->Software Mill Ox feature tests using Scala 3.
+>Software Mill Ox feature tests using JDK 21 and Scala 3.
 
 Test
 ----
