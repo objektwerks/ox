@@ -22,6 +22,7 @@ Resources
 * [Virtual Threads: JEPS 425](openjdk.org/jeps/425)
 * [Virtual Threads: JEPS 444](https://openjdk.org/jeps/444)
 * [Scoped Values: JEPS 429](https://openjdk.org/jeps/429)
+* [Scoped Values: JEPS 446](https://openjdk.org/jeps/446)
 * [Structured Concurrency: JEPS 428](openjdk.org/jeps/428)
 * [Structured Concurrency: JEPS 462](https://openjdk.org/jeps/462)
 * [Loom](www.marcobehler.com/guides/java-project-loom)
