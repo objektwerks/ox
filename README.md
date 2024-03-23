@@ -20,6 +20,7 @@ Resources
 * [Java 21 Virtual Threads](https://www.youtube.com/watch?v=5E0LU85EnTI)
 * [Java 21 Concurrency Guide](https://docs.oracle.com/en/java/javase/21/core/concurrency.html#GUID-59C16A2D-57CE-4C83-9D6F-91A48E01E3C6)
 * [Virtual Threads: JEPS 425](openjdk.org/jeps/425)
+* [Virtual Threads: JEPS 444](https://openjdk.org/jeps/444)
 * [Scoped Values: JEPS 429](https://openjdk.org/jeps/429)
 * [Structured Concurrency: JEPS 428](openjdk.org/jeps/428)
 * [Structured Concurrency: JEPS 462](https://openjdk.org/jeps/462)
