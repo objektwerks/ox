@@ -6,9 +6,9 @@ import scala.io.{Codec, Source}
 import scala.util.Using
 
 object FileLineCountTask:
-  val expectedLineCount = 540_959
   val aLineCount = 270_562
   val bLineCount = 270_397
+  val expectedLineCount = aLineCount + bLineCount
 
   def countLines(file: String): Int =
     Using(
