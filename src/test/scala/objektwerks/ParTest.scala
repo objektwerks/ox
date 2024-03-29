@@ -9,5 +9,5 @@ import FileLineCount.*
 
 final class ParTest extends AnyFunSuite with Matchers:
   test("par"):
-    val (a, b) = par( countLines("./data/data.a.csv"), countLines("./data/data.b.csv") )
+    val (a, b) = par( countLines(aFile), countLines(bFile) )
     a + b shouldBe expectedLineCount
