@@ -40,3 +40,10 @@ final class ParTest extends AnyFunSuite with Matchers:
     val numbers = List(1, 2, 3)
     val result = numbers.filterPar(2)(_ % 2 == 0)
     result.sum shouldBe 2
+
+  test("collect par"):
+    val input = List(1, 2, 3)
+    val result = input.collectPar(2) {
+      case i if i % 2 == 0 => i * i
+    } 
+    result.sum shouldBe 4
