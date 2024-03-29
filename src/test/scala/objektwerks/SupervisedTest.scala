@@ -10,8 +10,8 @@ import FileLineCount.*
 final class SupervisedTest extends AnyFunSuite with Matchers:
   test("supervised > fork"):
     val lineCount = supervised {
-      val aLines = fork( countFileLines(aFile) )
-      val bLines = fork( countFileLines(bFile) )
-      aLines.join() + bLines.join()
+      val aFileLines = fork( countFileLines(aFile) )
+      val bFileLines = fork( countFileLines(bFile) )
+      aFileLines.join() + bFileLines.join()
     }
     lineCount shouldBe expectedFileLineCount
