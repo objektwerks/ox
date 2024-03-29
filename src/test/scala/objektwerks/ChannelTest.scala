@@ -8,19 +8,17 @@ import ox.channels.*
 
 final class ChannelTest extends AnyFunSuite with Matchers:
   test("scoped > fork > channel > map"):
-    scoped {
+    scoped:
       val channel = Channel.buffered[Int](capacity = 3)
-      fork {
+      fork:
         channel.send(2)
         channel.send(4)
         channel.done()
-      }
       val values = channel
         .map(i => i * i)
         .toList
       values.head shouldBe 4
       values.last shouldBe 16
-    }
 
   test("supervised > fork > channel > transform"):
     supervised {
