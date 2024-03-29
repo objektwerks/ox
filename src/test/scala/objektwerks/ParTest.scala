@@ -18,3 +18,10 @@ final class ParTest extends AnyFunSuite with Matchers:
     val functions = (1 to 3).map(n => () => n * n)
     val results = parLimit(3)(functions)
     results.sum shouldBe 14
+
+  test("par either"):
+    val result = parEither(
+      Right( countFileLines(aFile) ),
+      Left(-1)    
+    )
+    result.map { (count, _) => count shouldBe aFileLineCount }
