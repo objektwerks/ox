@@ -31,3 +31,7 @@ final class ParTest extends AnyFunSuite with Matchers:
     val numbers = List(1, 2, 3)
     val result = numbers.mapPar(3)( n => n * n )
     result.sum shouldBe 14
+
+  test("foreach par"):
+    val numbers = List(1, 2, 3)
+    numbers.foreach( n => assert( n >= 1 ) )
