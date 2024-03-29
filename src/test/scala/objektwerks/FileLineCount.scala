@@ -4,8 +4,8 @@ import scala.io.{Codec, Source}
 import scala.util.Using
 
 object FileLineCount:
-  val fileA = "./data/data.a.csv"
-  val fileB = "./data/data.b.csv"
+  val aFile = "./data/data.a.csv"
+  val bFile = "./data/data.b.csv"
   val aLineCount = 270_562
   val bLineCount = 270_397
   val expectedLineCount = aLineCount + bLineCount
