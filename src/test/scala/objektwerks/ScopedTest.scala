@@ -20,11 +20,9 @@ final class ScopedTest extends AnyFunSuite with Matchers:
   test("scoped > fork > scoped value"):
     val license = ForkLocal("")
     val uuid = UUID.randomUUID.toString
-    val count = scoped {
-      fork {
-        license.scopedWhere(uuid) {
+    val count = scoped:
+      fork:
+        license.scopedWhere(uuid):
           if license.get().nonEmpty then 1 else -1
-        }
-      }
-    }.join()
+    .join()
     count shouldBe 1
