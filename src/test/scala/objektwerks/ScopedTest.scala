@@ -12,9 +12,9 @@ import FileLineCount.*
 final class ScopedTest extends AnyFunSuite with Matchers:
   test("scoped > fork"):
     val lineCount = scoped {
-      val alines = fork( countLines(aFile) )
-      val blines = fork( countLines(bFile) )
-      alines.join() + blines.join()
+      val aLines = fork( countLines(aFile) )
+      val bLines = fork( countLines(bFile) )
+      aLines.join() + bLines.join()
     }
     lineCount shouldBe expectedLineCount
 
