@@ -13,3 +13,8 @@ final class ParTest extends AnyFunSuite with Matchers:
     a shouldBe aFileLineCount
     b shouldBe bFileLineCount
     a + b shouldBe expectedFileLineCount
+
+  test("par limit"):
+    val functions = (1 to 3).map(n => () => n * n)
+    val results = parLimit(3)(functions)
+    results.sum shouldBe 1
