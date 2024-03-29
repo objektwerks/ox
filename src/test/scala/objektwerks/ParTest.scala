@@ -25,3 +25,7 @@ final class ParTest extends AnyFunSuite with Matchers:
       Left(-1)    
     )
     result.map { (count, _) => count shouldBe aFileLineCount }
+
+  test("race"):
+    val aOrb = race( countFileLines(aFile), countFileLines(bFile) )
+    assert( aOrb == aFileLineCount || aOrb == bFileLineCount )
