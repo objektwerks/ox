@@ -7,7 +7,7 @@ import org.scalatest.matchers.should.Matchers
 
 import ox.*
 
-import FileLineCountTask.*
+import FileLineCount.*
 
 final class ScopedTest extends AnyFunSuite with Matchers:
   test("scoped > fork"):

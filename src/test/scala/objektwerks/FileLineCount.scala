@@ -3,7 +3,7 @@ package objektwerks
 import scala.io.{Codec, Source}
 import scala.util.Using
 
-object FileLineCountTask:
+object FileLineCount:
   val aLineCount = 270_562
   val bLineCount = 270_397
   val expectedLineCount = aLineCount + bLineCount

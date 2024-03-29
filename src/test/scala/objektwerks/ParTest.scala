@@ -5,7 +5,7 @@ import org.scalatest.matchers.should.Matchers
 
 import ox.*
 
-import FileLineCountTask.*
+import FileLineCount.*
 
 final class ParTest extends AnyFunSuite with Matchers:
   test("par"):
