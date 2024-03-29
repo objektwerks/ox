@@ -21,15 +21,14 @@ final class ChannelTest extends AnyFunSuite with Matchers:
       values.last shouldBe 16
 
   test("supervised > fork > channel > transform"):
-    supervised {
+    supervised:
       val channel = Channel.buffered[Int](capacity = 4)
-      fork {
+      fork:
         channel.send(1)
         channel.send(6)
         channel.send(8)
         channel.send(11)
         channel.done()
-      }
       val values = channel
         .transform(_.filter(i => i % 2 == 0)
         .map(i => i * i))
@@ -37,4 +36,3 @@ final class ChannelTest extends AnyFunSuite with Matchers:
       values.length shouldBe 2
       values.head shouldBe 36
       values.last shouldBe 64
-    }
