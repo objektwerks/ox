@@ -4,6 +4,7 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
 import ox.*
+import ox.syntax.mapPar
 
 import FileLineCount.*
 
@@ -25,3 +26,8 @@ final class ParTest extends AnyFunSuite with Matchers:
       Left(-1)    
     )
     result.map { (count, _) => count shouldBe aFileLineCount }
+
+  test("map par"):
+    val numbers = List(1, 2, 3)
+    val result = numbers.mapPar(3)( n => n * n )
+    result.sum shouldBe 14
