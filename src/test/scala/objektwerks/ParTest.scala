@@ -17,4 +17,4 @@ final class ParTest extends AnyFunSuite with Matchers:
   test("par limit"):
     val functions = (1 to 3).map(n => () => n * n)
     val results = parLimit(3)(functions)
-    results.sum shouldBe 1
+    results.sum shouldBe 14
