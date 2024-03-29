@@ -1,7 +1,5 @@
 package objektwerks
 
-import java.util.concurrent.Callable
-
 import scala.io.{Codec, Source}
 import scala.util.Using
 
@@ -16,6 +14,3 @@ object FileLineCountTask:
     ) { source =>
       source.getLines.length
     }.get
-
-final class FileLineCountTask(file: String) extends Callable[Int]:
-  def call(): Int = FileLineCountTask.countLines(file)
