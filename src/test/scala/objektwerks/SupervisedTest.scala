@@ -14,4 +14,4 @@ final class SupervisedTest extends AnyFunSuite with Matchers:
       val bLines = fork( countFileLines(bFile) )
       aLines.join() + bLines.join()
     }
-    lineCount shouldBe expectedLineCount
+    lineCount shouldBe expectedFileLineCount

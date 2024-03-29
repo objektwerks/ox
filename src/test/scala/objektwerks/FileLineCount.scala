@@ -6,9 +6,9 @@ import scala.util.Using
 object FileLineCount:
   val aFile = "./data/data.a.csv"
   val bFile = "./data/data.b.csv"
-  val aLineCount = 270_562
-  val bLineCount = 270_397
-  val expectedLineCount = aLineCount + bLineCount
+  val aFileLineCount = 270_562
+  val bFileLineCount = 270_397
+  val expectedFileLineCount = aFileLineCount + bFileLineCount
 
   def countFileLines(file: String): Int =
     Using(

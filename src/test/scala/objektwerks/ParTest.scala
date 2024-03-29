@@ -10,6 +10,6 @@ import FileLineCount.*
 final class ParTest extends AnyFunSuite with Matchers:
   test("par"):
     val (a, b) = par( countFileLines(aFile), countFileLines(bFile) )
-    a shouldBe aLineCount
-    b shouldBe bLineCount
-    a + b shouldBe expectedLineCount
+    a shouldBe aFileLineCount
+    b shouldBe bFileLineCount
+    a + b shouldBe expectedFileLineCount

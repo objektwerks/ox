@@ -16,7 +16,7 @@ final class ScopedTest extends AnyFunSuite with Matchers:
       val bFileLines = fork( countFileLines(bFile) )
       aFileLines.join() + bFileLines.join()
     }
-    totalFileLineCount shouldBe expectedLineCount
+    totalFileLineCount shouldBe expectedFileLineCount
 
   test("scoped > fork > scoped value"):
     val license = ForkLocal("")
