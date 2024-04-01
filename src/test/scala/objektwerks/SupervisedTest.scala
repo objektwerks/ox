@@ -18,9 +18,10 @@ final class SupervisedTest extends AnyFunSuite with Matchers:
     totalFileLineCount shouldBe expectedFileLineCount
 
   test("supervised > fork user > exception"):
-    val exception = intercept[FileNotFoundException] ( supervised:
-      val countFileLinesFork = forkUser( countFileLines("non.existent.file") )
-      countFileLinesFork.join()
+    val exception = intercept[FileNotFoundException] (
+      supervised:
+        val countFileLinesFork = forkUser( countFileLines("non.existent.file") )
+        countFileLinesFork.join()
     )
     exception shouldBe a[FileNotFoundException]
 
