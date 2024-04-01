@@ -36,3 +36,8 @@ final class ChannelTest extends AnyFunSuite with Matchers:
       values.length shouldBe 2
       values.head shouldBe 36
       values.last shouldBe 64
+
+  test("source"):
+    supervised:
+      val source = Source.fromValues(1, 2, 3)
+      source.toList.sum shouldBe 6
