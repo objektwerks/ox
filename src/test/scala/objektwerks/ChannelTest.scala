@@ -53,11 +53,9 @@ final class ChannelTest extends AnyFunSuite with Matchers:
       val tick = Source.tick(1.second, Tick)
 
       @tailrec
-      def doConsume(acc: Int): Nothing =
+      def consume(acc: Int): Nothing =
         select(tick, strings) match
-          case Tick =>
-            println(s"Characters received this second: $acc")
-            doConsume(0)
-          case s: String => doConsume(acc + s.length)
+          case Tick => consume(0)
+          case s: String => consume(acc + s.length)
 
-      doConsume(0)
+      consume(0)
