@@ -1,13 +1,17 @@
 package objektwerks
 
-import scala.concurrent.duration.*
+import java.util.concurrent.TimeoutException
 
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
 import ox.*
+
+import scala.concurrent.duration.DurationInt
+
 import objektwerks.Fibonacci.fibonacci
 
-class TimeoutTest extends AnyFunSuite with Matchers:
+final class TimeoutTest extends AnyFunSuite with Matchers:
   test("timeout"):
-    timeout(10.micros)(fibonacci(96))
+    val exception = intercept[TimeoutException]( timeout(10.micros)(fibonacci(96)) )
+    exception shouldBe a[TimeoutException]
