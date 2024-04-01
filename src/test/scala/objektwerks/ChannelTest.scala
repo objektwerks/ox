@@ -45,14 +45,16 @@ final class ChannelTest extends AnyFunSuite with Matchers:
   test("select"):
     import scala.annotation.tailrec
 
-    supervised:
+    val result = supervised:
       val letters = Source.fromValues("a", "b", "c")
       val numbers = Source.fromValues(1, 2, 3)
 
       @tailrec
-      def consume(acc: Int): Nothing =
-        select(letters, numbers) match
+      def consume(acc: Int): Int =
+        selectSafe(letters, numbers) match
           case Int => consume(0)
           case letter: String => consume(acc + letter.length)
+          case _ => acc
 
       consume(0)
+    result shouldBe 3
