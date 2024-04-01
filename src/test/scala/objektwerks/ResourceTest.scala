@@ -5,8 +5,11 @@ import org.scalatest.matchers.should.Matchers
 
 import ox.*
 
+import FileLineCount.*
+
 final class ResourceTest extends AnyFunSuite with Matchers:
   test("resource"):
-    supervised:
-      val resource1 = useInScope(acquire(10))(release)
-      println(s"Using $resource1 ...")
+    val fileLineCount = supervised:
+      val source = useInScope(acquire(aFile))(release)
+      source.getLines.length
+    fileLineCount shouldBe aFileLineCount
