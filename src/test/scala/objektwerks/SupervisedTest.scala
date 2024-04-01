@@ -8,7 +8,7 @@ import ox.*
 import FileLineCount.*
 
 final class SupervisedTest extends AnyFunSuite with Matchers:
-  test("supervised > fork"):
+  test("supervised > fork user"):
     val totalFileLineCount = supervised:
       val aCountFileLinesFork = forkUser( countFileLines(aFile) )
       val bCountFileLinesFork = forkUser( countFileLines(bFile) )
