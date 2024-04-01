@@ -12,11 +12,12 @@ class Counter:
   private val count = AtomicInteger(0)
   def increment(number: Int): Int = count.addAndGet(number)
   def value(): Int = count.get()
+  def close(): Unit = count.set(0)
 
 class ActorTest extends AnyFunSuite with Matchers:
   test("actor > ask"):
     val count = supervised:
-      val counter = Actor.create(Counter())
+      val counter = Actor.create(Counter(), Some( _.close() ))
       counter.ask(_.increment(1))
       counter.ask(_.increment(2))
       counter.ask(_.increment(3))
