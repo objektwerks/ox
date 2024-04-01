@@ -10,6 +10,6 @@ import scala.concurrent.duration.DurationInt
 import FileLineCount.*
 
 final class TimeoutTest extends AnyFunSuite with Matchers:
-  test("timeout"):
+  test("timeout option"):
     val result = timeoutOption(10.milliseconds) { countFileLines(aFile) }
     result shouldBe None
