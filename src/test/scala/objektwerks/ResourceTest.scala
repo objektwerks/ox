@@ -7,4 +7,6 @@ import ox.*
 
 final class ResourceTest extends AnyFunSuite with Matchers:
   test("resource"):
-    true
+    supervised:
+      val resource1 = useInScope(acquire(10))(release)
+      println(s"Using $resource1 ...")
