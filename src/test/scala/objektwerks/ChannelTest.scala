@@ -40,4 +40,4 @@ final class ChannelTest extends AnyFunSuite with Matchers:
   test("source"):
     supervised:
       val source = Source.fromValues(1, 2, 3)
-      source.toList.sum shouldBe 6
+      source.toList.map(i => i * 2).sum shouldBe 12
