@@ -43,11 +43,13 @@ final class ChannelTest extends AnyFunSuite with Matchers:
       source.toList.sum shouldBe 6
 
   test("map"):
-    supervised:
+    val result = supervised:
       val channel = Channel.rendezvous[String]
       channel.send("a")
       channel.send("b")
       channel.send("c")
       channel.done()
       val source = channel.map(string => string.length())
-      source.toList.sum shouldBe 3
+      source.receive()
+      source.toList.sum
+    result shouldBe 3
