@@ -23,3 +23,9 @@ final class SupervisedTest extends AnyFunSuite with Matchers:
       countFileLinesFork.join()
     )
     exception shouldBe a[FileNotFoundException]
+
+  test("supervised > for error"):
+    val result = supervisedError(EitherMode[Int]):
+      forkUserError { Left(10) } 
+      Right(()) 
+    result shouldBe Left(10)
