@@ -44,18 +44,15 @@ final class ChannelTest extends AnyFunSuite with Matchers:
 
   test("select"):
     import scala.annotation.tailrec
-    import scala.concurrent.duration.*
-
-    case object Tick
 
     supervised:
-      val strings = Source.fromValues("a", "b", "c")
-      val tick = Source.tick(1.second, Tick)
+      val letters = Source.fromValues("a", "b", "c")
+      val numbers = Source.fromValues(1, 2, 3)
 
       @tailrec
       def consume(acc: Int): Nothing =
-        select(tick, strings) match
-          case Tick => consume(0)
-          case s: String => consume(acc + s.length)
+        select(letters, numbers) match
+          case Int => consume(0)
+          case letter: String => consume(acc + letter.length)
 
       consume(0)
