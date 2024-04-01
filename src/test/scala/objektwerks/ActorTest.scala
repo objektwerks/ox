@@ -22,3 +22,12 @@ class ActorTest extends AnyFunSuite with Matchers:
       counter.ask(_.increment(3))
       counter.ask(_.value())
     count shouldBe 6
+
+  test("actor > tell"):
+    val count = supervised:
+      val counter = Actor.create(Counter())
+      counter.tell(_.increment(1))
+      counter.tell(_.increment(2))
+      counter.tell(_.increment(3))
+      counter.ask(_.value())
+    count shouldBe 6
