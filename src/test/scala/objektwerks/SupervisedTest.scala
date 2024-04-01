@@ -17,6 +17,14 @@ final class SupervisedTest extends AnyFunSuite with Matchers:
       aCountFileLinesFork.join() + bCountFileLinesFork.join()
     totalFileLineCount shouldBe expectedFileLineCount
 
+  test("supervised > fork user syntax"):
+    import ox.syntax.*
+    val totalFileLineCount = supervised:
+      val aCountFileLinesFork = countFileLines(aFile).forkUser
+      val bCountFileLinesFork = countFileLines(bFile).forkUser
+      aCountFileLinesFork.join() + bCountFileLinesFork.join()
+    totalFileLineCount shouldBe expectedFileLineCount
+
   test("supervised > fork user > exception"):
     val exception = intercept[FileNotFoundException] (
       supervised:
