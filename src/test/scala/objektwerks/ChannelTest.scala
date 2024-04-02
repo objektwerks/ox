@@ -53,8 +53,7 @@ final class ChannelTest extends AnyFunSuite with Matchers:
       def consume(acc: Int): Int =
         selectSafe(letters, numbers) match
           case letter: String =>
-            println(letter)
-            println(acc + letter.length)
+            println(s"$letter > ${acc + letter.length}")
             consume(acc + letter.length)
           case number: Int =>
             println(number)
