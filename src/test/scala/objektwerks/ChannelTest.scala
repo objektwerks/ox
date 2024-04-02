@@ -46,7 +46,7 @@ final class ChannelTest extends AnyFunSuite with Matchers:
     import scala.annotation.tailrec
 
     val result = supervised:
-      val letters = Source.fromValues("a", "b", "c")
+      val letters = Source.fromValues("a", "bb", "ccc")
       val numbers = Source.fromValues(1, 2, 3)
 
       @tailrec
@@ -57,4 +57,4 @@ final class ChannelTest extends AnyFunSuite with Matchers:
           case _ => acc
 
       consume(0)
-    result shouldBe 3
+    result shouldBe 6
