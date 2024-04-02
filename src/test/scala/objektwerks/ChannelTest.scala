@@ -56,8 +56,7 @@ final class ChannelTest extends AnyFunSuite with Matchers:
             println(s"$letter > ${acc + letter.length}")
             consume(acc + letter.length)
           case number: Int =>
-            println(number)
-            println(acc + number)
+            println(s"$number > ${acc + number}")
             consume(acc + number)
           case _ => acc
 
