@@ -5,6 +5,7 @@ import org.scalatest.matchers.should.Matchers
 
 import ox.*
 import ox.channels.*
+import ox.channels.ChannelClosed.Done
 
 final class ChannelTest extends AnyFunSuite with Matchers:
   test("scoped > fork > channel > map"):
@@ -58,7 +59,9 @@ final class ChannelTest extends AnyFunSuite with Matchers:
           case number: Int =>
             println(s"$number > ${acc + number}")
             consume(acc + number)
-          case _ => acc
+          case done : Done.type =>
+            println(done)
+            acc
 
       consume(0)
     result shouldBe 6
