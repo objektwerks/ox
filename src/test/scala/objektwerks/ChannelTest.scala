@@ -52,8 +52,14 @@ final class ChannelTest extends AnyFunSuite with Matchers:
       @tailrec
       def consume(acc: Int): Int =
         selectSafe(letters, numbers) match
-          case Int => consume(0)
-          case letter: String => consume(acc + letter.length)
+          case letter: String =>
+            println(letter)
+            println(acc + letter.length)
+            consume(acc + letter.length)
+          case number: Int =>
+            println(number)
+            println(acc + number)
+            consume(acc + number)
           case _ => acc
 
       consume(0)
