@@ -4,7 +4,7 @@ version := "0.1-SNAPSHOT"
 scalaVersion := "3.4.2-RC1"
 libraryDependencies ++= {
   Seq(
-    "com.softwaremill.ox" %% "core" % "0.0.24",
+    "com.softwaremill.ox" %% "core" % "0.0.25",
     "org.scalatest" %% "scalatest" % "3.2.18" % Test
   )
 }
