@@ -8,8 +8,8 @@ import ox.channels.*
 import ox.channels.ChannelClosed.Done
 
 final class ChannelTest extends AnyFunSuite with Matchers:
-  test("scoped > fork > channel > map"):
-    scoped:
+  test("supervised > fork > channel > map"):
+    supervised:
       val channel = Channel.buffered[Int](capacity = 3)
       fork:
         channel.send(2)
@@ -52,7 +52,7 @@ final class ChannelTest extends AnyFunSuite with Matchers:
 
       @tailrec
       def consume(acc: Int): Int =
-        selectSafe(letters, numbers) match
+        select(letters, numbers) match
           case letter: String =>
             println(s"$letter > ${acc + letter.length}")
             consume(acc + letter.length)
