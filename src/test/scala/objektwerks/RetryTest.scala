@@ -4,7 +4,7 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
 import ox.*
-import ox.retry.{retry, retryEither, RetryPolicy}
+import ox.resilience.*
 
 import FileLineCount.*
 
