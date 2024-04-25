@@ -52,7 +52,7 @@ final class ChannelTest extends AnyFunSuite with Matchers:
 
       @tailrec
       def consume(acc: Int): Int =
-        select(letters, numbers) match
+        selectOrClosed(letters, numbers) match
           case letter: String =>
             println(s"$letter > ${acc + letter.length}")
             consume(acc + letter.length)
