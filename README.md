@@ -32,3 +32,4 @@ Resources
 * [virtual.threads](https://github.com/objektwerks/virtual.threads)
 * [Odersky Direct Style Talk](https://www.youtube.com/watch?v=0Fm0y4K4YO8)
 * [Odersky Direct Style Gears](https://github.com/lampepfl/gears)
+* [Odersky Scala Turns 20](https://www.youtube.com/watch?v=sNos8aGjJMA)
