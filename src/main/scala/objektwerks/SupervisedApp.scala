@@ -4,10 +4,10 @@ import ox.*
 
 @main
 def runSupervisedApp: Unit =
-  val jokes = supervised:
+  supervised:
     List(
       forkUser( getJoke() ).join(),
       forkUser( getJoke() ).join(),
       forkUser( getJoke() ).join()
     )
-  jokes.foreach(println)
+  .foreach(println)
