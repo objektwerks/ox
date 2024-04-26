@@ -14,6 +14,9 @@ class Counter:
   def value(): Int = count.get()
   def close(): Unit = count.set(0)
 
+/**
+  * See: https://ox.softwaremill.com/latest/channels/actors.html
+  */
 class ActorTest extends AnyFunSuite with Matchers:
   test("actor > ask"):
     val count = supervised:
