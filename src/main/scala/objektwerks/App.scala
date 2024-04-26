@@ -15,6 +15,6 @@ def runApp: Unit =
 def getJoke(): String =
   Using( Source.fromURL("https://api.chucknorris.io/jokes/random", Codec.UTF8.name) ) { 
     source => s"* ${parseJson( source.mkString )}"
-  }.get
+  }.getOrElse("Chuck Norris is taking a power nap! Come back in a few nanoseconds!")
 
 def parseJson(json: String): String = ujson.read(json)("value").str
