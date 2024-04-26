@@ -48,3 +48,4 @@ Resources
 * [Scala Direct Style Gears](https://github.com/lampepfl/gears)
 * [Odersky Direct Style Talk](https://www.youtube.com/watch?v=0Fm0y4K4YO8)
 * [Odersky Scala Turns 20](https://www.youtube.com/watch?v=sNos8aGjJMA)
+* [Software Mill Safe Direct-Style Scala](https://softwaremill.com/safe-direct-style-scala-ox-0-1-0-released/)
