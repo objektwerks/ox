@@ -10,6 +10,10 @@ Test
 ----
 1. sbt clean test
 
+Run
+---
+1. sbt run
+
 Resources
 ---------
 * [Software Mill Ox Docs](https://ox.softwaremill.com/latest/)
