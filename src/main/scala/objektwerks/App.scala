@@ -13,7 +13,7 @@ def runApp: Unit =
 
 def getJoke(): String =
   Using( Source.fromURL("https://api.chucknorris.io/jokes/random", Codec.UTF8.name) ) { 
-    source => source.mkString
+    source => parseJson( source.mkString )
   }.get
 
-//def parseJson(json: String): String = ujson.read(json)("value").str
+def parseJson(json: String): String = ujson.read(json)("value").str
