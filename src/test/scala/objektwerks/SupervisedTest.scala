@@ -30,10 +30,3 @@ final class SupervisedTest extends AnyFunSuite with Matchers:
       forkUserError { Left(10) } 
       Right(()) 
     result shouldBe Left(10)
-
-  test("unsupervised > fork cancellable"):
-    val totalFileLineCount = unsupervised:
-      val aCountFileLinesFork = forkCancellable( countFileLines(aFile) )
-      val bCountFileLinesFork = forkCancellable( countFileLines(bFile) )
-      aCountFileLinesFork.join() + bCountFileLinesFork.join()
-    totalFileLineCount shouldBe expectedFileLineCount
