@@ -1,6 +1,6 @@
 Ox
 --
->Software Mill Ox feature tests using JDK 22, uJson and Scala 3.
+>Software Mill Ox feature tests using uJson and Scala 3.
 
 Build
 -----
