@@ -7,9 +7,10 @@ import scala.util.Using
 
 @main
 def runApp: Unit =
-  val (joke1, joke2) = par( getJoke(), getJoke() )
+  val (joke1, joke2, joke3) = par( getJoke(), getJoke(), getJoke() )
   println(joke1)
   println(joke2)
+  println(joke3)
 
 def getJoke(): String =
   Using( Source.fromURL("https://api.chucknorris.io/jokes/random", Codec.UTF8.name) ) { 
