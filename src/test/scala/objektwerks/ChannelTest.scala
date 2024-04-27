@@ -7,6 +7,9 @@ import ox.*
 import ox.channels.*
 import ox.channels.ChannelClosed.Done
 
+/**
+  * See: https://ox.softwaremill.com/latest/channels/index.html
+  */
 final class ChannelTest extends AnyFunSuite with Matchers:
   test("supervised > channel > fork > filterAsView > mapAsView"):
     supervised:
