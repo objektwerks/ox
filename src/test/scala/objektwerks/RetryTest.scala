@@ -8,6 +8,9 @@ import ox.resilience.*
 
 import FileLineCount.*
 
+/**
+  * See: https://ox.softwaremill.com/latest/retries.html
+  */
 final class RetryTest extends AnyFunSuite with Matchers:
   test("retry"):
     val fileLineCount =  retry( RetryPolicy.immediate(2) )( countFileLines(aFile) )
