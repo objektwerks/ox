@@ -7,6 +7,9 @@ import ox.*
 
 import FileLineCount.*
 
+/**
+  * See: https://ox.softwaremill.com/latest/high-level-concurrency/race.html
+  */
 final class RaceTest extends AnyFunSuite with Matchers:
   test("race"):
     val aOrb = race( countFileLines(aFile), countFileLines(bFile) )
