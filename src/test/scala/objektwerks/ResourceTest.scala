@@ -7,6 +7,9 @@ import ox.*
 
 import FileLineCount.*
 
+/**
+  * See: https://ox.softwaremill.com/latest/high-level-concurrency/race.html
+  */
 final class ResourceTest extends AnyFunSuite with Matchers:
   test("resource"):
     val fileLineCount = supervised:
