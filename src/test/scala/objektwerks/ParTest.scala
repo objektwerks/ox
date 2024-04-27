@@ -8,8 +8,9 @@ import ox.*
 import FileLineCount.*
 
 /**
-  * See: https://ox.softwaremill.com/latest/high-level-concurrency/par.html
-  * See: https://ox.softwaremill.com/latest/high-level-concurrency/collections.html
+  * See:
+  * 1. https://ox.softwaremill.com/latest/high-level-concurrency/par.html
+  * 2. https://ox.softwaremill.com/latest/high-level-concurrency/collections.html
   */
 final class ParTest extends AnyFunSuite with Matchers:
   test("par"):
