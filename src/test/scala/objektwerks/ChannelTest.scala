@@ -56,17 +56,11 @@ final class ChannelTest extends AnyFunSuite with Matchers:
       val numbers = Source.fromValues(1, 2, 3)
 
       @tailrec
-      def consume(acc: Int): Int =
+      def consume(acc: Int = 0): Int =
         selectOrClosed(letters, numbers) match
-          case letter: String =>
-            println(s"$letter > ${acc + letter.length}")
-            consume(acc + letter.length)
-          case number: Int =>
-            println(s"$number > ${acc + number}")
-            consume(acc + number)
-          case done : Done.type =>
-            println(done)
-            acc
+          case letter: String => consume(acc + letter.length)
+          case number: Int => consume(acc + number)
+          case done : Done.type => acc
 
-      consume(0)
+      consume()
     result shouldBe 6
