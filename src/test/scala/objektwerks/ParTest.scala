@@ -7,6 +7,9 @@ import ox.*
 
 import FileLineCount.*
 
+/**
+  * See: https://ox.softwaremill.com/latest/high-level-concurrency/par.html
+  */
 final class ParTest extends AnyFunSuite with Matchers:
   test("par"):
     val (a, b) = par( countFileLines(aFile), countFileLines(bFile) )
