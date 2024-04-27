@@ -28,6 +28,9 @@ final class SupervisedTest extends AnyFunSuite with Matchers:
     )
     exception shouldBe a[FileNotFoundException]
 
+  /**
+    * See: https://ox.softwaremill.com/latest/structured-concurrency/error-handling-scopes.html
+    */
   test("supervised error > fork user error"):
     val result = supervisedError(EitherMode[Int]):
       forkUserError { Left(10) } 
