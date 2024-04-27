@@ -7,6 +7,9 @@ import ox.*
 
 import FileLineCount.*
 
+/**
+  * See: https://ox.softwaremill.com/latest/structured-concurrency/fork-join.html
+  */
 final class UnsupervisedTest extends AnyFunSuite with Matchers:
   test("unsupervised > fork cancellable"):
     val totalFileLineCount = unsupervised:
