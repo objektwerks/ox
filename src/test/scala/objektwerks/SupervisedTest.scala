@@ -9,6 +9,9 @@ import ox.*
 
 import FileLineCount.*
 
+/**
+  * See: https://ox.softwaremill.com/latest/structured-concurrency/fork-join.html
+  */
 final class SupervisedTest extends AnyFunSuite with Matchers:
   test("supervised > fork user"):
     val totalFileLineCount = supervised:
