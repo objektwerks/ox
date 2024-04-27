@@ -10,8 +10,9 @@ import ox.*
 import FileLineCount.*
 
 /**
-  * See: https://ox.softwaremill.com/latest/structured-concurrency/fork-join.html
-  * See: https://ox.softwaremill.com/latest/structured-concurrency/error-handling-scopes.html
+  * See:
+  * 1. https://ox.softwaremill.com/latest/structured-concurrency/fork-join.html
+  * 2. https://ox.softwaremill.com/latest/structured-concurrency/error-handling-scopes.html
   */
 final class SupervisedTest extends AnyFunSuite with Matchers:
   test("supervised > fork user"):
