@@ -8,7 +8,7 @@ import ox.*
 import FileLineCount.*
 
 /**
-  * See: https://ox.softwaremill.com/latest/high-level-concurrency/race.html
+  * See: https://ox.softwaremill.com/latest/resources.html
   */
 final class ResourceTest extends AnyFunSuite with Matchers:
   test("resource"):
