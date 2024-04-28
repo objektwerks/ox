@@ -45,6 +45,7 @@ Resources
 * [Virtual Threads Design](https://blogs.oracle.com/javamagazine/post/java-virtual-threads)
 * [Ultimate Guide to Virtual Threads](https://blog.rockthejvm.com/ultimate-guide-to-java-virtual-threads/)
 * [virtual.threads](https://github.com/objektwerks/virtual.threads)
+* [Unwrapping IO](https://www.youtube.com/watch?v=qR_Od7qbacs)
 * [Scala Direct Style Gears](https://github.com/lampepfl/gears)
 * [Odersky Direct Style Talk](https://www.youtube.com/watch?v=0Fm0y4K4YO8)
 * [Odersky Scala Turns 20](https://www.youtube.com/watch?v=sNos8aGjJMA)
