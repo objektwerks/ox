@@ -49,3 +49,4 @@ Resources
 * [Odersky Direct Style Talk](https://www.youtube.com/watch?v=0Fm0y4K4YO8)
 * [Odersky Scala Turns 20](https://www.youtube.com/watch?v=sNos8aGjJMA)
 * [Software Mill Safe Direct-Style Scala](https://softwaremill.com/safe-direct-style-scala-ox-0-1-0-released/)
+* [Software Mill Release 0.1.0 Thread](https://www.reddit.com/r/scala/comments/1cdfaki/safe_directstyle_scala_ox_010_released/)
