@@ -1,6 +1,6 @@
 name := "ox"
 organization := "objektwerks"
-version := "0.7-SNAPSHOT"
+version := "0.7"
 scalaVersion := "3.4.2"
 libraryDependencies ++= {
   Seq(
