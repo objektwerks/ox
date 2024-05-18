@@ -1,7 +1,7 @@
 name := "ox"
 organization := "objektwerks"
 version := "0.8-SNAPSHOT"
-scalaVersion := "3.4.2"
+scalaVersion := "3.5.0-RC1"
 libraryDependencies ++= {
   Seq(
     "com.softwaremill.ox" %% "core" % "0.1.1",
