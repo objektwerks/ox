@@ -7,10 +7,11 @@ import ox.*
   */
 @main
 def runParApp: Unit =
-  par(
-    getJoke(),
-    getJoke(),
-    getJoke()
-  )
-  .toList
-  .foreach(println)
+  IO.unsafe:
+    par(
+      getJoke(),
+      getJoke(),
+      getJoke()
+    )
+    .toList
+    .foreach(println)

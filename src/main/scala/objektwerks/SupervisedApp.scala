@@ -7,10 +7,11 @@ import ox.*
   */
 @main
 def runSupervisedApp: Unit =
-  supervised:
-    List(
-      forkUser( getJoke() ).join(),
-      forkUser( getJoke() ).join(),
-      forkUser( getJoke() ).join()
-    )
-  .foreach(println)
+  IO.unsafe:
+    supervised:
+      List(
+        forkUser( getJoke() ).join(),
+        forkUser( getJoke() ).join(),
+        forkUser( getJoke() ).join()
+      )
+    .foreach(println)
