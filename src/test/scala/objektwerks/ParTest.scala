@@ -14,10 +14,11 @@ import FileLineCount.*
   */
 final class ParTest extends AnyFunSuite with Matchers:
   test("par"):
-    val (a, b) = par( countFileLines(aFile), countFileLines(bFile) )
-    a shouldBe aFileLineCount
-    b shouldBe bFileLineCount
-    a + b shouldBe expectedFileLineCount
+    IO.unsafe:
+      val (a, b) = par( countFileLines(aFile), countFileLines(bFile) )
+      a shouldBe aFileLineCount
+      b shouldBe bFileLineCount
+      a + b shouldBe expectedFileLineCount
 
   test("par limit"):
     val functions = (1 to 3).map(n => () => n * n)
@@ -25,11 +26,12 @@ final class ParTest extends AnyFunSuite with Matchers:
     results.sum shouldBe 14
 
   test("par either"):
-    val result = parEither(
-      Right( countFileLines(aFile) ),
-      Left(-1)    
-    )
-    result.map { (count, _) => count shouldBe aFileLineCount }
+    IO.unsafe:
+      val result = parEither(
+        Right( countFileLines(aFile) ),
+        Left(-1)    
+      )
+      result.map { (count, _) => count shouldBe aFileLineCount }
 
   test("map par"):
     val numbers = List(1, 2, 3)
