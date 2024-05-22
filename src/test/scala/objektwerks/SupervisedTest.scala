@@ -6,6 +6,7 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
 import ox.*
+import ox.IO.globalForTesting.given
 
 import FileLineCount.*
 
@@ -16,30 +17,27 @@ import FileLineCount.*
   */
 final class SupervisedTest extends AnyFunSuite with Matchers:
   test("supervised > fork user"):
-    IO.unsafe:
-      val totalFileLineCount = supervised:
-        val aCountFileLinesFork = forkUser( countFileLines(aFile) )
-        val bCountFileLinesFork = forkUser( countFileLines(bFile) )
-        aCountFileLinesFork.join() + bCountFileLinesFork.join()
-      totalFileLineCount shouldBe expectedFileLineCount
+    val totalFileLineCount = supervised:
+      val aCountFileLinesFork = forkUser( countFileLines(aFile) )
+      val bCountFileLinesFork = forkUser( countFileLines(bFile) )
+      aCountFileLinesFork.join() + bCountFileLinesFork.join()
+    totalFileLineCount shouldBe expectedFileLineCount
 
   test("supervised > fork user > exception"):
-    IO.unsafe:
-      val exception = intercept[FileNotFoundException] (
-        supervised:
-          val countFileLinesFork = forkUser( countFileLines("non.existent.file") )
-          countFileLinesFork.join()
-      )
-      exception shouldBe a[FileNotFoundException]
+    val exception = intercept[FileNotFoundException] (
+      supervised:
+        val countFileLinesFork = forkUser( countFileLines("non.existent.file") )
+        countFileLinesFork.join()
+    )
+    exception shouldBe a[FileNotFoundException]
 
   test("supervised > fork user > catching"):
-    IO.unsafe:
-      val either =
-        catching(
-          supervised:
-            forkUser( countFileLines("non.existent.file") ).join()
-        )
-      either.isLeft shouldBe true
+    val either =
+      catching(
+        supervised:
+          forkUser( countFileLines("non.existent.file") ).join()
+      )
+    either.isLeft shouldBe true
     
 
   test("supervised error > fork user error"):
