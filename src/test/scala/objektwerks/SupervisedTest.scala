@@ -16,27 +16,30 @@ import FileLineCount.*
   */
 final class SupervisedTest extends AnyFunSuite with Matchers:
   test("supervised > fork user"):
-    val totalFileLineCount = supervised:
-      val aCountFileLinesFork = forkUser( countFileLines(aFile) )
-      val bCountFileLinesFork = forkUser( countFileLines(bFile) )
-      aCountFileLinesFork.join() + bCountFileLinesFork.join()
-    totalFileLineCount shouldBe expectedFileLineCount
+    IO.unsafe:
+      val totalFileLineCount = supervised:
+        val aCountFileLinesFork = forkUser( countFileLines(aFile) )
+        val bCountFileLinesFork = forkUser( countFileLines(bFile) )
+        aCountFileLinesFork.join() + bCountFileLinesFork.join()
+      totalFileLineCount shouldBe expectedFileLineCount
 
   test("supervised > fork user > exception"):
-    val exception = intercept[FileNotFoundException] (
-      supervised:
-        val countFileLinesFork = forkUser( countFileLines("non.existent.file") )
-        countFileLinesFork.join()
-    )
-    exception shouldBe a[FileNotFoundException]
+    IO.unsafe:
+      val exception = intercept[FileNotFoundException] (
+        supervised:
+          val countFileLinesFork = forkUser( countFileLines("non.existent.file") )
+          countFileLinesFork.join()
+      )
+      exception shouldBe a[FileNotFoundException]
 
   test("supervised > fork user > catching"):
-    val either =
-      catching(
-        supervised:
-          forkUser( countFileLines("non.existent.file") ).join()
-      )
-    either.isLeft shouldBe true
+    IO.unsafe:
+      val either =
+        catching(
+          supervised:
+            forkUser( countFileLines("non.existent.file") ).join()
+        )
+      either.isLeft shouldBe true
     
 
   test("supervised error > fork user error"):
