@@ -52,3 +52,4 @@ Resources
 * [Software Mill Safe Direct-Style Scala](https://softwaremill.com/safe-direct-style-scala-ox-0-1-0-released/)
 * [Software Mill Release 0.1.0 Thread](https://www.reddit.com/r/scala/comments/1cdfaki/safe_directstyle_scala_ox_010_released/)
 * [Software Mill Direct Style Scala Stack Experiment](https://www.youtube.com/watch?v=C3j4AsFcxmM)
+* [Software Mill IO Effect Tracking](https://softwaremill.com/io-effect-tracking-using-ox/)
