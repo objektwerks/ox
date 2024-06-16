@@ -1,5 +1,7 @@
-drop table todo if exists;
-create table todo (
-  id int primary key auto_increment,
-  task varchar(128) not null
+DROP SCHEMA PUBLIC CASCADE;
+CREATE SCHEMA PUBLIC;
+
+CREATE TABLE todo (
+  id BIGSERIAL PRIMARY KEY,
+  task varchar(128) NOT NULL
 );
