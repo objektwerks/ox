@@ -1,6 +1,8 @@
 autoCompilerPlugins := true
 addCompilerPlugin("com.softwaremill.ox" %% "plugin" % "0.2.1")
 
+enablePlugins(JmhPlugin)
+
 name := "ox"
 organization := "objektwerks"
 version := "0.9-SNAPSHOT"
