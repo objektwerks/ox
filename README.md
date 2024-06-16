@@ -21,6 +21,17 @@ Multiple main classes detected. Select one to run:
 Enter number:
 ```
 
+Postgresql
+----------
+1. config:
+    1. on osx intel: /usr/local/var/postgres/postgresql.config : listen_addresses = ‘localhost’, port = 5432
+    2. on osx m1: /opt/homebrew/var/postgres/postgresql.config : listen_addresses = ‘localhost’, port = 5432
+2. run:
+    1. brew services start postgresql@14
+3. logs:
+    1. on osx intel: /usr/local/var/log/postgres.log
+    2. on m1: /opt/homebrew/var/log/postgres.log
+
 Database ENV
 ------------
 ```
