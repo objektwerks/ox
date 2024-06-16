@@ -32,8 +32,20 @@ Postgresql
     1. on osx intel: /usr/local/var/log/postgres.log
     2. on m1: /opt/homebrew/var/log/postgres.log
 
-Database ENV
-------------
+Database
+--------
+>Example database url: postgresql://localhost:5432/todo?user=yourcomputername&password=todo"
+1. psql postgres
+2. CREATE DATABASE house OWNER [your computer name];
+3. GRANT ALL PRIVILEGES ON DATABASE todo TO [your computer name];
+4. \l
+5. \q
+6. psql todo
+7. \i ddl.sql
+8. \q
+
+Environment
+-----------
 ```
 export TODO_POSTGRESQL_DRIVER="org.postgresql.ds.PGSimpleDataSource"
 export TODO_POSTGRESQL_URL="postgresql://localhost:5432/todo"
