@@ -21,6 +21,15 @@ Multiple main classes detected. Select one to run:
 Enter number:
 ```
 
+Database ENV
+------------
+```
+export TODO_POSTGRESQL_DRIVER="org.postgresql.ds.PGSimpleDataSource"
+export TODO_POSTGRESQL_URL="postgresql://localhost:5432/todo?user=tripletail&password='"
+export TODO_POSTGRESQL_USER="your.computer.name"
+export TODO_POSTGRESQL_PASSWORD=""
+```
+
 Resources
 ---------
 * [Software Mill Ox Docs](https://ox.softwaremill.com/latest/)
