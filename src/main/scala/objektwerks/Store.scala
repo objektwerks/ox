@@ -33,6 +33,6 @@ final class Store(config: Config):
   def listTodos()(using IO): Seq[Todo] =
     DB readOnly { implicit session =>
       sql"select * from todo"
-        .map(rs => Todo( rs.int("id"), rs.string("task") ) )
+        .map(rs => Todo( rs.long("id"), rs.string("task") ) )
         .list()
     }
