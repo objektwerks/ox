@@ -5,7 +5,7 @@ enablePlugins(JmhPlugin)
 
 name := "ox"
 organization := "objektwerks"
-version := "0.9-SNAPSHOT"
+version := "0.9"
 scalaVersion := "3.5.0-RC1"
 libraryDependencies ++= {
   Seq(
