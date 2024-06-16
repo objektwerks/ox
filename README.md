@@ -34,7 +34,7 @@ Postgresql
 
 Database
 --------
->Example database url: postgresql://localhost:5432/todo?user=yourcomputername&password=todo"
+>Example database url: postgresql://localhost:5432/todo?user=yourcomputername&password=yourpassword"
 1. psql postgres
 2. CREATE DATABASE house OWNER [your computer name];
 3. GRANT ALL PRIVILEGES ON DATABASE todo TO [your computer name];
