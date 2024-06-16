@@ -38,12 +38,10 @@ Results
 
 Slow Select
 -----------
->Postgresql analysis ( postgresql@14 ):
+>Postgresql analysis:
 ```
 ➜  ox git:(main) psql todo
 psql (14.12 (Homebrew))
-Type "help" for help.
-
 todo=# explain (analyze,buffers,verbose) select id, task from todo;
                                                 QUERY PLAN                                                
 ----------------------------------------------------------------------------------------------------------
