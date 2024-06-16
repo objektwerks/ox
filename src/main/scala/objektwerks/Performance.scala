@@ -5,8 +5,9 @@ import com.typesafe.config.ConfigFactory
 import java.util.UUID
 import java.util.concurrent.TimeUnit
 
-import ox.*
 import org.openjdk.jmh.annotations.{Benchmark, BenchmarkMode, Fork, Measurement, Mode, OutputTimeUnit, Scope, State, Warmup}
+
+import ox.*
 
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.AverageTime))
