@@ -1,6 +1,6 @@
 Ox
 --
->Software Mill Ox feature tests using uJson and Scala 3.
+>Software Mill Ox feature tests using uJson, HikariCP, ScalikeJdbc, Postgresql and Scala 3.
 
 Build
 -----
