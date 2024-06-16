@@ -44,6 +44,19 @@ Database
 7. \i ddl.sql
 8. \q
 
+DDL
+---
+>Alternatively run: psql -d todo -f ddl.sql
+1. psql todo
+2. \i ddl.sql
+3. \q
+
+Drop
+----
+1. psql postgres
+2. drop database todo;
+3. \q
+
 Environment
 -----------
 ```
