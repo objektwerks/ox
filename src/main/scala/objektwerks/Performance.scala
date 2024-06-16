@@ -5,7 +5,8 @@ import com.typesafe.config.ConfigFactory
 import java.util.UUID
 import java.util.concurrent.TimeUnit
 
-import org.openjdk.jmh.annotations.*
+import ox.*
+import org.openjdk.jmh.annotations.{Benchmark, BenchmarkMode, Fork, Measurement, Mode, OutputTimeUnit, Scope, State, Warmup}
 
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.AverageTime))
@@ -20,15 +21,21 @@ class Performance():
 
   @Benchmark
   def addTodo(): Todo =
-    todo = Todo(task = UUID.randomUUID.toString)
-    todo = todo.copy(id = store.addTodo(todo))
-    todo
+    IO.unsafe:
+      supervised:
+        todo = Todo(task = UUID.randomUUID.toString)
+        todo = todo.copy(id = store.addTodo(todo))
+        todo
 
   @Benchmark
   def updateTodo(): Int =
-    todo = todo.copy(task = UUID.randomUUID.toString)
-    store.updateTodo(todo)
+    IO.unsafe:
+      supervised:
+        todo = todo.copy(task = UUID.randomUUID.toString)
+        store.updateTodo(todo)
 
   @Benchmark
   def listTodos(): Seq[Todo] =
-    store.listTodos()
+    IO.unsafe:
+      supervised:
+        store.listTodos()
