@@ -32,7 +32,7 @@ Results
 1. addTodo - 124.026 / 33.005 -> H2 mem
 2. updateTodo - 60.618 / 30.721 -> H2 mem
 3. listTodos - 735,343.828 / 25.852 -> H2 mem
->Total time: 602 s (10:02), 10 warmups, 10 iterations, average time in microseconds, completed **2024.6.16**
+>Total time: 616 s (10:16), 10 warmups, 10 iterations, average time in microseconds, completed **2024.6.16**
 
 Postgresql
 ----------
