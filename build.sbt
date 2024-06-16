@@ -8,6 +8,7 @@ scalaVersion := "3.5.0-RC1"
 libraryDependencies ++= {
   Seq(
     "com.softwaremill.ox" %% "core" % "0.2.1",
+    "org.postgresql" % "postgresql" % "42.7.3",
     "com.lihaoyi" %% "ujson" % "3.3.1",
     "com.typesafe" % "config" % "1.4.3",
     "org.scalatest" %% "scalatest" % "3.2.18" % Test
