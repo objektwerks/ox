@@ -34,7 +34,7 @@ Results
 3. listTodos - 735,343.828 / 25.852 **
 >Total time: 616 s (10:16), 10 warmups, 10 iterations, average time in microseconds, completed **2024.6.16**
 
->** H2 In-memory database.
+>** H2 in-memory database average time.
 
 Postgresql
 ----------
