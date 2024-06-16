@@ -1,5 +1,9 @@
 package objektwerks
 
+import com.zaxxer.hikari.HikariDataSource
+
+import javax.sql.DataSource
+
 final class Store():
   private val dataSource: DataSource = {
     val ds = HikariDataSource()
