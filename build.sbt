@@ -9,6 +9,7 @@ libraryDependencies ++= {
   Seq(
     "com.softwaremill.ox" %% "core" % "0.2.1",
     "com.lihaoyi" %% "ujson" % "3.3.1",
+    "com.typesafe" % "config" % "1.4.3",
     "org.scalatest" %% "scalatest" % "3.2.18" % Test
   )
 }
