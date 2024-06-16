@@ -61,7 +61,7 @@ Environment
 -----------
 ```
 export TODO_POSTGRESQL_DRIVER="org.postgresql.ds.PGSimpleDataSource"
-export TODO_POSTGRESQL_URL="postgresql://localhost:5432/todo"
+export TODO_POSTGRESQL_URL="jdbc:postgresql://localhost:5432/todo"
 export TODO_POSTGRESQL_USER="your.computer.name"
 export TODO_POSTGRESQL_PASSWORD="your.password"
 ```
