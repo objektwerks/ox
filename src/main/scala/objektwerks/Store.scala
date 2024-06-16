@@ -1,10 +1,13 @@
 package objektwerks
 
+import com.typesafe.config.Config
 import com.zaxxer.hikari.HikariDataSource
 
 import javax.sql.DataSource
 
-final class Store():
+import scalikejdbc.*
+
+final class Store(config: Config):
   private val dataSource: DataSource = {
     val ds = HikariDataSource()
     ds.setDataSourceClassName(config.getString("db.driver"))
