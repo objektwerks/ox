@@ -36,6 +36,27 @@ Results
 
 >** H2 in-memory database average time, not using Ox IO.
 
+Slow Select
+-----------
+>Postgresql analysis ( postgresql@14 ):
+```
+➜  ox git:(main) psql todo
+psql (14.12 (Homebrew))
+Type "help" for help.
+
+todo=# explain (analyze,buffers,verbose) select id, task from todo;
+                                                QUERY PLAN                                                
+----------------------------------------------------------------------------------------------------------
+ Seq Scan on public.todo  (cost=0.00..12.60 rows=260 width=282) (actual time=0.006..0.007 rows=1 loops=1)
+   Output: id, task
+   Buffers: shared hit=1
+ Planning:
+   Buffers: shared hit=58
+ Planning Time: 0.464 ms
+ Execution Time: 0.022 ms
+(7 rows)
+```
+
 Postgresql
 ----------
 1. config:
