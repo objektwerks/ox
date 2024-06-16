@@ -38,9 +38,9 @@ Results
 
 Slow Select
 -----------
->Postgresql analysis:
+>Postgresql analysis for query ( select id, task from todo; ):
 ```
-➜  ox git:(main) psql todo
+:> psql todo
 psql (14.12 (Homebrew))
 todo=# explain (analyze,buffers,verbose) select id, task from todo;
                                                 QUERY PLAN                                                
