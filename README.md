@@ -30,7 +30,7 @@ Results
 -------
 >OpenJDK Runtime Environment Zulu22.30+13-CA (build 22.0.1+8), **Scala 3.5.0-RC1**, Apple M1
 1. addTodo - 124.026 / 33.005 -> H2 mem
-2. updateTodo - 60.077 / 30.721 -> H2 mem
+2. updateTodo - 60.618 / 30.721 -> H2 mem
 3. listTodos - 735,343.828 / 25.852 -> H2 mem
 >Total time: 602 s (10:02), 10 warmups, 10 iterations, average time in microseconds, completed **2024.6.16**
 
