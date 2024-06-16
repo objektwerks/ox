@@ -10,7 +10,7 @@ import ox.*
 import scala.sys.process.Process
 
 final class StoreTest extends AnyFunSuite with Matchers:
-  val exitCode = Process("psql -d house -f ddl.sql").run().exitValue()
+  val exitCode = Process("psql -d todo -f ddl.sql").run().exitValue()
   exitCode shouldBe 0
 
   val store = Store( ConfigFactory.load("test.conf") )
