@@ -1,5 +1,5 @@
 autoCompilerPlugins := true
-addCompilerPlugin("com.softwaremill.ox" %% "plugin" % "0.2.1")
+addCompilerPlugin("com.softwaremill.ox" %% "plugin" % "0.2.2")
 
 enablePlugins(JmhPlugin)
 
