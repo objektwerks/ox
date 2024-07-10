@@ -19,8 +19,8 @@ Run
 1. sbt run
 ```
 Multiple main classes detected. Select one to run:
- [1] objektwerks.runParApp
- [2] objektwerks.runSupervisedApp
+ [1] objektwerks.ParApp
+ [2] objektwerks.SupervisedApp
 
 Enter number:
 ```
@@ -47,7 +47,7 @@ Slow Select
 :> psql todo
 psql (14.12 (Homebrew))
 todo=# explain (analyze,buffers,verbose) select id, task from todo;
-                                                QUERY PLAN                                                
+                                                QUERY PLAN
 ----------------------------------------------------------------------------------------------------------
  Seq Scan on public.todo  (cost=0.00..12.60 rows=260 width=282) (actual time=0.006..0.007 rows=1 loops=1)
    Output: id, task
