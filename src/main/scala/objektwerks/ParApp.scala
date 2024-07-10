@@ -5,13 +5,14 @@ import ox.*
 /**
   * See: https://ox.softwaremill.com/latest/high-level-concurrency/par.html
   */
-@main
-def runParApp: Unit =
-  IO.unsafe:
-    par(
-      getJoke(),
-      getJoke(),
-      getJoke()
-    )
-    .toList
-    .foreach(println)
+object ParApp extends OxApp:
+  def run(args: Vector[String])(using Ox): ExitCode =
+    IO.unsafe:
+      par(
+        getJoke(),
+        getJoke(),
+        getJoke()
+      )
+      .toList
+      .foreach(println)
+    ExitCode.Success
