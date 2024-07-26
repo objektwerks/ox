@@ -13,5 +13,5 @@ object SupervisedApp extends OxApp:
         forkUser( getJoke() ).join(),
         forkUser( getJoke() ).join()
       )
-    .foreach(println)
+      .foreach(println)
     ExitCode.Success
