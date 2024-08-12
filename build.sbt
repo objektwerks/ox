@@ -12,7 +12,7 @@ scalaVersion := "3.5.0-RC6"
 libraryDependencies ++= {
   Seq(
     "com.softwaremill.ox" %% "core" % oxVersion,
-    "org.scalikejdbc" %% "scalikejdbc" % "4.3.0",
+    "org.scalikejdbc" %% "scalikejdbc" % "4.3.1",
     "com.zaxxer" % "HikariCP" % "5.1.0" exclude("org.slf4j", "slf4j-api"),
     "org.postgresql" % "postgresql" % "42.7.3",
     "com.lihaoyi" %% "ujson" % "4.0.0",
