@@ -2,6 +2,10 @@ Ox
 --
 >Software Mill Ox feature tests using uJson, HikariCP, ScalikeJdbc, Postgresql and Scala 3.
 
+Todo
+----
+1. Email
+
 Install
 -------
 1. brew install postgresql@14
