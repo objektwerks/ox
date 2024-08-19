@@ -8,15 +8,17 @@ import jodd.mail.{Email, MailServer, SmtpServer}
 import scala.language.postfixOps
 import scala.util.Using
 
-final case class EmailConfig(config: Config):
+final case class EmailServerConfig(config: Config):
   val host = config.getString("email.host")
   val sender = config.getString("email.sender")
   val password = config.getString("email.password")
+
+final case class EmailConfig(config: Config):
   val recipients = List( config.getString("email.sender") )
   val subject = config.getString("email.subject")
   val message = config.getString("email.message")
 
-final class Emailer(config: EmailConfig) extends LazyLogging:
+final class Emailer(config: EmailServerConfig) extends LazyLogging:
   private val smtpServer: SmtpServer = MailServer.create
     .host(config.host)
     .ssl(true)
@@ -41,6 +43,4 @@ final class Emailer(config: EmailConfig) extends LazyLogging:
       throw error
     }
 
-  def send(recipients: List[String],
-           subject: String,
-           message: String): Unit = sendEmail(recipients, subject, message)
+  def send(config: EmailConfig): Unit = sendEmail(config.recipients, config.subject, config.message)

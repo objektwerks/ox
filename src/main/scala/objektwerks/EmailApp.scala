@@ -7,10 +7,9 @@ import ox.resilience.*
 
 object EmailApp extends OxApp:
   def run(args: Vector[String])(using Ox, IO): ExitCode =
-    val config = EmailConfig( ConfigFactory.load("email.conf") )
-    val emailer = Emailer(config)
+    val emailer = Emailer( EmailServerConfig( ConfigFactory.load("email.conf") ) )
 
     supervised:
-      val either = retryEither( RetryConfig.immediate(2) )( Right( emailer.send(config.recipients, config.subject, config.message) ) )
+      val either = retryEither( RetryConfig.immediate(2) )( Right( emailer.send( EmailConfig( ConfigFactory.load("email.conf") ) ) ) )
       assert( either.isRight )
     ExitCode.Success
