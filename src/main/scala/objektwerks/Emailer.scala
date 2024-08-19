@@ -8,7 +8,7 @@ import jodd.mail.{Email, MailServer, SmtpServer}
 import scala.language.postfixOps
 import scala.util.Using
 
-final case class EmailConfi(config: Config):
+final case class EmailConfig(config: Config):
   val host = config.getString("email.host")
   val sender = config.getString("email.sender")
   val password = config.getString("email.password")
@@ -16,13 +16,11 @@ final case class EmailConfi(config: Config):
   val subject = config.getString("email.subject")
   val message = config.getString("email.message")
 
-final class Emailer(host: String,
-                    sender: String,
-                    password: String) extends LazyLogging:
+final class Emailer(config: EmailConfig) extends LazyLogging:
   private val smtpServer: SmtpServer = MailServer.create
-    .host(host)
+    .host(config.host)
     .ssl(true)
-    .auth(sender, password)
+    .auth(config.sender, config.password)
     .buildSmtpMailServer
 
   private def sendEmail(recipients: List[String],
@@ -30,10 +28,10 @@ final class Emailer(host: String,
                         message: String): Unit =
     Using( smtpServer.createSession ) { session =>
       val email = Email.create
-        .from(sender)
+        .from(config.sender)
         .subject(subject)
         .textMessage(message, "UTF-8")
-        .cc(sender)
+        .cc(config.sender)
       recipients.foreach( recipient => email.to(recipient) )
       session.open
       val messageId = session.sendMail(email)
