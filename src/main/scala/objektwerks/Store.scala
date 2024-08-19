@@ -22,7 +22,8 @@ final class Store(config: Config):
 
   def addTodo(todo: Todo)(using IO): Long =
     DB localTx { implicit session =>
-      sql"insert into todo(task) values(${todo.task})".updateAndReturnGeneratedKey()
+      sql"insert into todo(task) values(${todo.task})"
+      .updateAndReturnGeneratedKey()
     }
 
   def updateTodo(todo: Todo)(using IO): Int =
