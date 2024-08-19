@@ -1,6 +1,5 @@
 package objektwerks
 
-import com.typesafe.config.Config
 import com.typesafe.scalalogging.LazyLogging
 
 import jodd.mail.{Email, MailServer, SmtpServer}
@@ -8,11 +7,9 @@ import jodd.mail.{Email, MailServer, SmtpServer}
 import scala.language.postfixOps
 import scala.util.Using
 
-final class Emailer(config: Config) extends LazyLogging:
-  private val host = config.getString("email.host")
-  private val sender = config.getString("email.sender")
-  private val password = config.getString("email.password")
-
+final class Emailer(host: String,
+                    sender: String,
+                    password: String) extends LazyLogging:
   private val smtpServer: SmtpServer = MailServer.create
     .host(host)
     .ssl(true)
