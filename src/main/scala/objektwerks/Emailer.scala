@@ -1,11 +1,20 @@
 package objektwerks
 
+import com.typesafe.config.Config
 import com.typesafe.scalalogging.LazyLogging
 
 import jodd.mail.{Email, MailServer, SmtpServer}
 
 import scala.language.postfixOps
 import scala.util.Using
+
+final case class EmailConfi(config: Config):
+  val host = config.getString("email.host")
+  val sender = config.getString("email.sender")
+  val password = config.getString("email.password")
+  val recipients = List( config.getString("email.sender") )
+  val subject = config.getString("email.subject")
+  val message = config.getString("email.message")
 
 final class Emailer(host: String,
                     sender: String,
