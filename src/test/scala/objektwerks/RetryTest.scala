@@ -14,8 +14,9 @@ import FileLineCount.*
   */
 final class RetryTest extends AnyFunSuite with Matchers:
   test("retry"):
-    val fileLineCount =  retry( RetryConfig.immediate(2) )( countFileLines(aFile) )
-    fileLineCount shouldBe aFileLineCount
+    supervised:
+      val fileLineCount =  retry( RetryConfig.immediate(2) )( countFileLines(aFile) )
+      fileLineCount shouldBe aFileLineCount
 
   test("retry either"):
     val fileLineCount =  retryEither( RetryConfig.immediate(2) )( Right( countFileLines(aFile) ) )
