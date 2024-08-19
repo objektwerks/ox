@@ -1,6 +1,7 @@
 package objektwerks
 
 import com.typesafe.config.Config
+import com.typesafe.scalalogging.LazyLogging
 
 import jodd.mail.{Email, MailServer, SmtpServer}
 
