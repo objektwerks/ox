@@ -102,6 +102,10 @@ Drop
 Environment
 -----------
 ```
+export EMAIL_HOST="your.email.host.com"
+export EMAIL_ADDRESS="your.email@com"
+export EMAIL_PASSWORD="your.email.password"
+
 export TODO_POSTGRESQL_DRIVER="org.postgresql.ds.PGSimpleDataSource"
 export TODO_POSTGRESQL_URL="jdbc:postgresql://localhost:5432/todo"
 export TODO_POSTGRESQL_USER="your.computer.name"
