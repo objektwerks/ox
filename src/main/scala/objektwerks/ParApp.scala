@@ -7,11 +7,12 @@ import ox.*
   */
 object ParApp extends OxApp:
   def run(args: Vector[String])(using Ox, IO): ExitCode =
-    par(
-      getJoke(),
-      getJoke(),
-      getJoke()
-    )
-    .toList
-    .foreach(println)
+    supervised:
+      par(
+        getJoke(),
+        getJoke(),
+        getJoke()
+      )
+      .toList
+      .foreach(println)
     ExitCode.Success
