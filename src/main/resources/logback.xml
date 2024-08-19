@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <appender name="file" class="ch.qos.logback.core.FileAppender">
-        <file>./target/benchmark.log</file>
+        <file>./target/app.log</file>
         <append>true</append>
         <encoder>
             <pattern>%-5p: %d{ISO8601} [%t] %m%n</pattern>
