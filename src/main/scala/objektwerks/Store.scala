@@ -28,7 +28,8 @@ final class Store(config: Config):
 
   def updateTodo(todo: Todo)(using IO): Int =
     DB localTx { implicit session =>
-      sql"update todo set task = ${todo.task} where id = ${todo.id}".update()
+      sql"update todo set task = ${todo.task} where id = ${todo.id}"
+      .update()
     }
 
   def listTodos()(using IO): Seq[Todo] =
