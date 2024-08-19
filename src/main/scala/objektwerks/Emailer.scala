@@ -1,0 +1,4 @@
+package objektwerks
+
+object Emailer:
+  
