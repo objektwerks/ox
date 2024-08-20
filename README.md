@@ -19,9 +19,10 @@ Run
 1. sbt run
 ```
 Multiple main classes detected. Select one to run:
- [1] objektwerks.EmailApp
- [2] objektwerks.ParApp
- [3] objektwerks.SupervisedApp
+[1] objektwerks.EmailApp
+[2] objektwerks.ParApp
+[3] objektwerks.StoreApp
+[4] objektwerks.SupervisedApp
 
 Enter number:
 ```
