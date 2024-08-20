@@ -7,7 +7,7 @@ import ox.resilience.*
 
 object StoreApp extends OxApp:
   def run(args: Vector[String])(using Ox, IO): ExitCode =
-    val store = Store( StoreConfig( ConfigFactory.load("store.conf") ) )
+    val store = Store( ConfigFactory.load("store.conf") )
     val todo = Todo(task = "Drink Dogfishhead 60 Minute IPA!")
 
     supervised:

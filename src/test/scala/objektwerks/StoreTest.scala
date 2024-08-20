@@ -14,8 +14,7 @@ final class StoreTest extends AnyFunSuite with Matchers:
   val exitCode = Process("psql -d todo -f ddl.sql").run().exitValue()
   exitCode shouldBe 0
 
-  val config = StoreConfig( ConfigFactory.load("test.conf") )
-  val store = Store(config)
+  val store = Store( ConfigFactory.load("test.conf") )
 
   test("store"):
     supervised:
