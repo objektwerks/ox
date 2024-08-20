@@ -128,7 +128,6 @@ Resources
 * [Scoped Values: JEPS 446](https://openjdk.org/jeps/446)
 * [Structured Concurrency: JEPS 428](openjdk.org/jeps/428)
 * [Structured Concurrency: JEPS 462](https://openjdk.org/jeps/462)
-* [Loom](www.marcobehler.com/guides/java-project-loom)
 * [Loom Blocking](https://softwaremill.com/what-is-blocking-in-loom/)
 * [Virtual Threads Design](https://blogs.oracle.com/javamagazine/post/java-virtual-threads)
 * [Ultimate Guide to Virtual Threads](https://blog.rockthejvm.com/ultimate-guide-to-java-virtual-threads/)
