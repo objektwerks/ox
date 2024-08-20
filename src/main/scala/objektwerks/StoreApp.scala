@@ -5,6 +5,11 @@ import com.typesafe.config.ConfigFactory
 import ox.*
 import ox.resilience.*
 
+/**
+* See StoreTest for the simplified version, which gourps all store ops within a single io / supervised clause.
+*
+* This app wraps each store op in an individual io / supervised clause.
+*/
 object StoreApp extends OxApp:
   def run(args: Vector[String])(using Ox, IO): ExitCode =
     val store = Store( ConfigFactory.load("store.conf") )
