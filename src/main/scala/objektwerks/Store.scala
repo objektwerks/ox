@@ -9,8 +9,8 @@ import ox.IO
 
 import scalikejdbc.*
 
-final class Store(config: Config):
-  private val dataSource: DataSource = {
+final case class StoreConfig(config: Config):
+  val dataSource: DataSource = {
     val ds = HikariDataSource()
     ds.setDataSourceClassName(config.getString("db.driver"))
     ds.addDataSourceProperty("url", config.getString("db.url"))
@@ -18,7 +18,9 @@ final class Store(config: Config):
     ds.addDataSourceProperty("password", config.getString("db.password"))
     ds
   }
-  ConnectionPool.singleton( DataSourceConnectionPool(dataSource) )
+
+final class Store(config: StoreConfig):
+  ConnectionPool.singleton( DataSourceConnectionPool(config.dataSource) )
 
   def addTodo(todo: Todo)(using IO): Long =
     DB localTx { implicit session =>

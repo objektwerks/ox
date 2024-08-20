@@ -16,7 +16,8 @@ import ox.*
 @Measurement(iterations = 10)
 @Fork(1)
 class Performance():
-  val store = Store( ConfigFactory.load("store.conf") )
+  val config = StoreConfig( ConfigFactory.load("store.conf") )
+  val store = Store(config)
 
   var todo = Todo(task = "")
 
