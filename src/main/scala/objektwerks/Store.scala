@@ -20,7 +20,7 @@ object Store:
       ds
     new Store(dataSource)
 
-final class Store(dataSource: DataSource):
+private final class Store(dataSource: DataSource):
   ConnectionPool.singleton( DataSourceConnectionPool(dataSource) )
 
   def addTodo(todo: Todo)(using IO): Long =
