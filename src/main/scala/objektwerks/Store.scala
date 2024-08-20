@@ -10,14 +10,13 @@ import ox.IO
 import scalikejdbc.*
 
 final case class StoreConfig(config: Config):
-  val dataSource: DataSource = {
+  val dataSource: DataSource =
     val ds = HikariDataSource()
     ds.setDataSourceClassName(config.getString("db.driver"))
     ds.addDataSourceProperty("url", config.getString("db.url"))
     ds.addDataSourceProperty("user", config.getString("db.user"))
     ds.addDataSourceProperty("password", config.getString("db.password"))
     ds
-  }
 
 final class Store(config: StoreConfig):
   ConnectionPool.singleton( DataSourceConnectionPool(config.dataSource) )
