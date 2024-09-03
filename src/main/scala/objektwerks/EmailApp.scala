@@ -13,4 +13,5 @@ object EmailApp extends OxApp:
     supervised:
       val either = retryEither( RetryConfig.immediate(2) )( Right( emailer.send( EmailConfig(config) ) ) )
       assert( either.isRight )
+
     ExitCode.Success
