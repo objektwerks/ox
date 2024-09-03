@@ -15,4 +15,5 @@ object ParApp extends OxApp:
       )
       .toList
       .foreach(println)
+
     ExitCode.Success
