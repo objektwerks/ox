@@ -61,6 +61,7 @@ final class ChannelTest extends AnyFunSuite with Matchers:
           case letter: String => consume(acc + letter.length)
           case number: Int => consume(acc + number)
           case done : Done.type => acc
+          case error : ox.channels.ChannelClosed.Error => acc
 
       consume()
     result shouldBe 6
