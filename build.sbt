@@ -1,4 +1,4 @@
-val oxVersion = "0.3.8"
+val oxVersion = "0.3.9"
 
 autoCompilerPlugins := true
 addCompilerPlugin("com.softwaremill.ox" %% "plugin" % oxVersion)
