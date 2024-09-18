@@ -8,7 +8,7 @@ import org.scalatest.matchers.should.Matchers
 import ox.*
 import ox.channels.Actor
 
-class Counter:
+final class Counter:
   private val count = AtomicInteger(0)
   def increment(number: Int): Int = count.addAndGet(number)
   def value(): Int = count.get()
@@ -17,7 +17,7 @@ class Counter:
 /**
   * See: https://ox.softwaremill.com/latest/channels/actors.html
   */
-class ActorTest extends AnyFunSuite with Matchers:
+final class ActorTest extends AnyFunSuite with Matchers:
   test("actor > ask"):
     val count = supervised:
       val counter = Actor.create(Counter(), Some( _.close() ))
