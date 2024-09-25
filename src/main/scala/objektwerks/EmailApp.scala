@@ -6,7 +6,7 @@ import ox.*
 import ox.resilience.*
 
 object EmailApp extends OxApp:
-  def run(args: Vector[String])(using Ox, IO): ExitCode =
+  def run(args: Vector[String])(using Ox): ExitCode =
     val config = ConfigFactory.load("email.conf")
     val emailer = Emailer( EmailServerConfig(config) )
 
