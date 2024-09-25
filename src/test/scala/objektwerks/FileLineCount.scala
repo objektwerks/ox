@@ -10,7 +10,7 @@ object FileLineCount:
   val bFileLineCount = 270_397
   val expectedFileLineCount = aFileLineCount + bFileLineCount
 
-  def countFileLines(file: String)(using IO): Int =
+  def countFileLines(file: String): Int =
     Using(
       Source.fromFile(file, Codec.UTF8.name)
     ) { source =>
