@@ -21,21 +21,18 @@ class Performance():
 
   @Benchmark
   def addTodo(): Todo =
-    IO.unsafe:
-      supervised:
-        todo = Todo(task = UUID.randomUUID.toString)
-        todo = todo.copy(id = store.addTodo(todo))
-        todo
+    supervised:
+      todo = Todo(task = UUID.randomUUID.toString)
+      todo = todo.copy(id = store.addTodo(todo))
+      todo
 
   @Benchmark
   def updateTodo(): Int =
-    IO.unsafe:
-      supervised:
-        todo = todo.copy(task = UUID.randomUUID.toString)
-        store.updateTodo(todo)
+    supervised:
+      todo = todo.copy(task = UUID.randomUUID.toString)
+      store.updateTodo(todo)
 
   @Benchmark
   def listTodos(): Seq[Todo] =
-    IO.unsafe:
-      supervised:
-        store.listTodos()
+    supervised:
+      store.listTodos()
