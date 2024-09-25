@@ -1,7 +1,7 @@
-val oxVersion = "0.3.9"
+val oxVersion = "0.4.0"
 
 autoCompilerPlugins := true
-addCompilerPlugin("com.softwaremill.ox" %% "plugin" % oxVersion)
+addCompilerPlugin("com.softwaremill.ox" %% "plugin" % "0.3.9")
 
 enablePlugins(JmhPlugin)
 
