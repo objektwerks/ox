@@ -11,7 +11,7 @@ import ox.resilience.*
 * This app wraps each store op in an individual io / supervised clause.
 */
 object StoreApp extends OxApp:
-  def run(args: Vector[String])(using Ox, IO): ExitCode =
+  def run(args: Vector[String])(using Ox): ExitCode =
     val store = Store( ConfigFactory.load("store.conf") )
     val todo = Todo(task = "Drink Dogfishhead 60 Minute IPA!")
 
