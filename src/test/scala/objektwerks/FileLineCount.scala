@@ -17,6 +17,6 @@ object FileLineCount:
       source.getLines.length
     }.get
 
-  def acquire(file: String)(using IO): Source = Source.fromFile(file, Codec.UTF8.name)
+  def acquire(file: String): Source = Source.fromFile(file, Codec.UTF8.name)
 
-  def release(source: Source)(using IO): Unit = source.close()
+  def release(source: Source): Unit = source.close()
