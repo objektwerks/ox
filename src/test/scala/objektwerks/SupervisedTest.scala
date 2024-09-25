@@ -6,7 +6,6 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
 import ox.*
-import ox.IO.globalForTesting.given
 
 import FileLineCount.*
 
