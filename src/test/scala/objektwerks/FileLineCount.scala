@@ -1,7 +1,5 @@
 package objektwerks
 
-import ox.IO
-
 import scala.io.{Codec, Source}
 import scala.util.Using
 
