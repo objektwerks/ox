@@ -6,7 +6,7 @@ import ox.*
 import ox.resilience.*
 
 /**
-* See StoreTest for the simplified version, which gourps all store ops within a single io / supervised clause.
+* See StoreTest for the simplified version, which gourps all store ops within a single supervised clause.
 *
 * This app wraps each store op in an individual io / supervised clause.
 */
