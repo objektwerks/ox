@@ -13,7 +13,7 @@ import FileLineCount.*
 final class RaceTest extends AnyFunSuite with Matchers:
   test("race"):
     supervised:
-      val aOrb = race( countFileLines(aFile), countFileLines(bFile) )
+      val aOrb = raceSuccess( countFileLines(aFile), countFileLines(bFile) )
       assert( aOrb == aFileLineCount || aOrb == bFileLineCount )
 
   test("race either"):
