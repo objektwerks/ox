@@ -6,7 +6,7 @@ version := "0.17-SNAPSHOT"
 scalaVersion := "3.5.2"
 libraryDependencies ++= {
   Seq(
-    "com.softwaremill.ox" %% "core" % "0.5.1",
+    "com.softwaremill.ox" %% "core" % "0.5.2",
     "org.scalikejdbc" %% "scalikejdbc" % "4.3.2",
     "com.zaxxer" % "HikariCP" % "5.1.0" exclude("org.slf4j", "slf4j-api"),
     "org.postgresql" % "postgresql" % "42.7.4",
