@@ -114,6 +114,7 @@ Resources
 ---------
 * [Software Mill Ox Docs](https://ox.softwaremill.com/latest/)
 * [Software Mill Ox Github](https://github.com/softwaremill/ox/)
+* [Direct Style Streaming](https://softwaremill.com/direct-style-concurrent-streaming/)
 * [Handling Errors in Direct Style](https://softwaremill.com/handling-errors-in-direct-style-scala/)
 * [Limits of Loom's Performance](https://softwaremill.com/limits-of-looms-performance/)
 * [Software Mill Ox](https://softwaremill.com/prototype-loom-based-concurrency-api-for-scala/)
