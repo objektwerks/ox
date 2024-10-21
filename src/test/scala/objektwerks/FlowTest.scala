@@ -3,7 +3,6 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-import ox.*
 import ox.flow.Flow
 
 final class FlowTest  extends AnyFunSuite with Matchers:
