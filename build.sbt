@@ -8,7 +8,7 @@ libraryDependencies ++= {
   Seq(
     "com.softwaremill.ox" %% "core" % "0.5.5",
     "org.scalikejdbc" %% "scalikejdbc" % "4.3.2",
-    "com.zaxxer" % "HikariCP" % "6.0.0" exclude("org.slf4j", "slf4j-api"),
+    "com.zaxxer" % "HikariCP" % "6.1.0" exclude("org.slf4j", "slf4j-api"),
     "org.postgresql" % "postgresql" % "42.7.4",
     "org.jodd" % "jodd-mail" % "7.0.1",
     "com.lihaoyi" %% "ujson" % "4.0.2",
