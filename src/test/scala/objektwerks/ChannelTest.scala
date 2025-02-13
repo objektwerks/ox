@@ -20,8 +20,8 @@ final class ChannelTest extends AnyFunSuite with Matchers:
         channel.send(4)
         channel.done()
       val values = channel
-        .filterAsView(i => i % 2 == 0)
-        .mapAsView(i => i * i)
+        .filter(i => i % 2 == 0)
+        .map(i => i * i)
         .toList
       values.head shouldBe 4
       values.last shouldBe 16
