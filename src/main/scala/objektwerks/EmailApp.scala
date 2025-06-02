@@ -2,8 +2,9 @@ package objektwerks
 
 import com.typesafe.config.ConfigFactory
 
-import ox.*
-import ox.resilience.*
+import ox.{ExitCode, Ox, OxApp, supervised}
+import ox.resilience.retryEither
+import ox.scheduling.Schedule
 
 object EmailApp extends OxApp:
   def run(args: Vector[String])(using Ox): ExitCode =
@@ -11,7 +12,7 @@ object EmailApp extends OxApp:
     val emailer = Emailer( EmailServerConfig(config) )
 
     supervised:
-      val either = retryEither( RetryConfig.immediate(2) )( Right( emailer.send( EmailConfig(config) ) ) )
+      val either = retryEither( Schedule.immediate )( Right( emailer.send( EmailConfig(config) ) ) )
       assert( either.isRight )
 
     ExitCode.Success

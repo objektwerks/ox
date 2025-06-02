@@ -2,8 +2,9 @@ package objektwerks
 
 import com.typesafe.config.ConfigFactory
 
-import ox.*
-import ox.resilience.*
+import ox.{ExitCode, Ox, OxApp, supervised}
+import ox.resilience.retryEither
+import ox.scheduling.Schedule
 
 /**
 * See StoreTest for the simplified version, which gourps all store ops within a single supervised clause.
@@ -16,15 +17,15 @@ object StoreApp extends OxApp:
     val todo = Todo(task = "Drink Dogfishhead 60 Minute IPA!")
 
     supervised:
-      val add = retryEither( RetryConfig.immediate(2) )( Right( store.addTodo(todo) ) )
+      val add = retryEither( Schedule.immediate )( Right( store.addTodo(todo) ) )
       assert( add.isRight )
 
     supervised:
-      val update = retryEither( RetryConfig.immediate(2) )( Right( store.updateTodo(todo.copy(task = "Drink DogfishHead 60 Minute IPA!")) ) )
+      val update = retryEither( Schedule.immediate )( Right( store.updateTodo(todo.copy(task = "Drink DogfishHead 60 Minute IPA!")) ) )
       assert( update.isRight )
 
     supervised:
-      val list = retryEither( RetryConfig.immediate(2) )( Right( store.listTodos() ) )
+      val list = retryEither( Schedule.immediate )( Right( store.listTodos() ) )
       assert( list.isRight )
 
     ExitCode.Success
