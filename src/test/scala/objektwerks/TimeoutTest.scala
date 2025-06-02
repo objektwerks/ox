@@ -15,10 +15,10 @@ import FileLineCount.*
 final class TimeoutTest extends AnyFunSuite with Matchers:
   test("timeout either"):
     supervised:
-      val result = timeoutEither(3.milliseconds, 0) { Right( countFileLines(aFile) ) }
+      val result = timeoutEither(1.milliseconds, 0) { Right( countFileLines(aFile) ) }
       result.isLeft shouldBe true
 
   test("timeout option"):
     supervised:
-      val result = timeoutOption(3.milliseconds) { countFileLines(aFile) }
+      val result = timeoutOption(1.milliseconds) { countFileLines(aFile) }
       result shouldBe None
