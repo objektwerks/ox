@@ -3,7 +3,7 @@ enablePlugins(JmhPlugin)
 name := "ox"
 organization := "objektwerks"
 version := "1.0.0"
-scalaVersion := "3.7.1-RC2"
+scalaVersion := "3.7.1"
 libraryDependencies ++= {
   Seq(
     "com.softwaremill.ox" %% "core" % "0.6.0",
