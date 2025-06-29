@@ -1,10 +1,6 @@
 package objektwerks
 
-import com.typesafe.config.ConfigFactory
-
-import ox.{ExitCode, Ox, OxApp, supervised}
-import ox.resilience.retryEither
-import ox.scheduling.Schedule
+import ox.{ExitCode, Ox, OxApp, par, supervised}
 import ox.otel.context.PropagatingVirtualThreadFactory
 
 object OtelApp extends OxApp:
@@ -13,11 +9,13 @@ object OtelApp extends OxApp:
   )
 
   def run(args: Vector[String])(using Ox): ExitCode =
-    val config = ConfigFactory.load("email.conf")
-    val emailer = Emailer( EmailServerConfig(config) )
-
     supervised:
-      val either = retryEither( Schedule.immediate )( Right( emailer.send( EmailConfig(config) ) ) )
-      assert( either.isRight )
+      par(
+        getJoke(),
+        getJoke(),
+        getJoke()
+      )
+      .toList
+      .foreach(println)
 
     ExitCode.Success
