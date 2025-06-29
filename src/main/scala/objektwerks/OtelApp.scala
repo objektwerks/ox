@@ -1,6 +1,6 @@
 package objektwerks
 
-import ox.{ExitCode, Ox, OxApp, par, supervised}
+import ox.{ExitCode, Ox, OxApp, supervised}
 import ox.otel.context.PropagatingVirtualThreadFactory
 
 object OtelApp extends OxApp:
@@ -10,12 +10,6 @@ object OtelApp extends OxApp:
 
   def run(args: Vector[String])(using Ox): ExitCode =
     supervised:
-      par(
-        getJoke(),
-        getJoke(),
-        getJoke()
-      )
-      .toList
-      .foreach(println)
+      println( getJoke() )
 
     ExitCode.Success
