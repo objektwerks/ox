@@ -2,6 +2,9 @@ package objektwerks
 
 import ox.{ExitCode, Ox, OxApp, supervised}
 import ox.otel.context.PropagatingVirtualThreadFactory
+import ox.scheduling.{repeat, Schedule}
+
+import scala.concurrent.duration.DurationInt
 
 object OtelApp extends OxApp:
   override def settings: OxApp.Settings = OxApp.Settings.Default.copy(
@@ -10,6 +13,6 @@ object OtelApp extends OxApp:
 
   def run(args: Vector[String])(using Ox): ExitCode =
     supervised:
-      println( getJoke() )
+      repeat( Schedule.fixedInterval(1.second) )( println( getJoke() ) )
 
     ExitCode.Success
