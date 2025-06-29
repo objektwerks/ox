@@ -5,8 +5,10 @@ organization := "objektwerks"
 version := "1.0.0"
 scalaVersion := "3.7.2-RC1"
 libraryDependencies ++= {
+  val oxVersion = "0.7.0"
   Seq(
-    "com.softwaremill.ox" %% "core" % "0.7.0",
+    "com.softwaremill.ox" %% "core" % oxVersion,
+    "com.softwaremill.ox" %% "otel-context" % oxVersion,
     "org.scalikejdbc" %% "scalikejdbc" % "4.3.2",
     "com.zaxxer" % "HikariCP" % "6.3.0" exclude("org.slf4j", "slf4j-api"),
     "org.postgresql" % "postgresql" % "42.7.5",
