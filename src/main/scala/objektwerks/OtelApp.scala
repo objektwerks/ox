@@ -6,6 +6,9 @@ import ox.scheduling.{repeat, Schedule}
 
 import scala.concurrent.duration.DurationInt
 
+/**
+  * Requires an OpenTelemetry implementation - which is currently out of scope.
+  */
 object OtelApp extends OxApp:
   override def settings = OxApp.Settings.Default.copy(
     threadFactory = Some( PropagatingVirtualThreadFactory() )
