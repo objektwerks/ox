@@ -5,13 +5,18 @@ import com.typesafe.config.ConfigFactory
 import ox.{ExitCode, Ox, OxApp, supervised}
 import ox.resilience.retryEither
 import ox.scheduling.Schedule
+import ox.otel.context.PropagatingVirtualThreadFactory
 
 /**
-* See StoreTest for the simplified version, which gourps all store ops within a single supervised clause.
+* See StoreTest for the simplified version, which groups all store ops within a single supervised clause.
 *
 * This app wraps each store op in an individual io / supervised clause.
 */
 object StoreApp extends OxApp:
+  override def settings: OxApp.Settings = OxApp.Settings.Default.copy(
+    threadFactory = Some(PropagatingVirtualThreadFactory())
+  )
+
   def run(args: Vector[String])(using Ox): ExitCode =
     val store = Store( ConfigFactory.load("store.conf") )
     val todo = Todo(task = "Drink Dogfishhead 60 Minute IPA!")
