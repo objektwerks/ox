@@ -13,6 +13,6 @@ object OtelApp extends OxApp:
 
   def run(args: Vector[String])(using Ox): ExitCode =
     supervised:
-      repeat( Schedule.fixedInterval(1.second) )( println( getJoke() ) )
+      repeat( Schedule.fixedInterval(2.seconds) )( println( getJoke() ) )
 
     ExitCode.Success
