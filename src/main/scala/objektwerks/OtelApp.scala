@@ -7,7 +7,7 @@ import ox.scheduling.{repeat, Schedule}
 import scala.concurrent.duration.DurationInt
 
 object OtelApp extends OxApp:
-  override def settings: OxApp.Settings = OxApp.Settings.Default.copy(
+  override def settings = OxApp.Settings.Default.copy(
     threadFactory = Some(PropagatingVirtualThreadFactory())
   )
 
