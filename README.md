@@ -40,7 +40,7 @@ Results
 3. listTodos - 735,343.828 / 25.852 **
 >Total time: 616 s (10:16), 10 warmups, 10 iterations, average time in microseconds, completed **2024.6.16**
 
->** H2 in-memory database average time, not using Ox IO. See [ScalikeJdbc](https://github.com/objektwerks/scalikejdbc)
+>** H2 in-memory database average time, not using Ox. See [ScalikeJdbc](https://github.com/objektwerks/scalikejdbc)
 
 Slow Select
 -----------
