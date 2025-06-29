@@ -8,7 +8,7 @@ import scala.concurrent.duration.DurationInt
 
 object OtelApp extends OxApp:
   override def settings = OxApp.Settings.Default.copy(
-    threadFactory = Some(PropagatingVirtualThreadFactory())
+    threadFactory = Some( PropagatingVirtualThreadFactory() )
   )
 
   def run(args: Vector[String])(using Ox): ExitCode =
