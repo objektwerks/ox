@@ -7,8 +7,8 @@ import ox.scheduling.{repeat, Schedule}
 import scala.concurrent.duration.DurationInt
 
 /**
-  * Requires an OpenTelemetry implementation - which is currently out of scope.
-  * And likely not worth it: https://devops.com/opentelemetry-isnt-the-hero-we-need-heres-why-its-failing-our-stack/
+  * Requires an OpenTelemetry implementation - which is currently out of scope. And most likely not worth
+  * the effort: https://devops.com/opentelemetry-isnt-the-hero-we-need-heres-why-its-failing-our-stack/
   */
 object OtelApp extends OxApp:
   override def settings = OxApp.Settings.Default.copy(
