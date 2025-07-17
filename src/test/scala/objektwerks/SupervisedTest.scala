@@ -32,14 +32,12 @@ final class SupervisedTest extends AnyFunSuite with Matchers:
       )
     exception shouldBe a[FileNotFoundException]
 
-  test("supervised > fork user > catching"):
+  test("supervised > fork user > catchAll"):
     val caught =
-      either.catching(
+      either.catchAll:
         supervised:
           forkUser( countFileLines("non.existent.file") ).join()
-      )
     caught.isLeft shouldBe true
-
 
   test("supervised error > fork user error"):
     val result =
