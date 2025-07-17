@@ -4,19 +4,19 @@ Ox
 
 Install
 -------
-1. brew install postgresql@14
+1. ```brew install postgresql@14```
 
 Build
 -----
-1. sbt clean compile
+1. ```sbt clean compile```
 
 Test
 ----
-1. sbt clean test
+1. ```sbt clean test```
 
 Run
 ---
-1. sbt run
+1. ```sbt run```
 ```
 Multiple main classes detected. Select one to run:
  [1] objektwerks.EmailApp
@@ -31,7 +31,7 @@ Enter number:
 Benchmark
 ---------
 >See Performance class for details.
-1. sbt jmh:run
+1. ```sbt jmh:run```
 
 Results
 -------
