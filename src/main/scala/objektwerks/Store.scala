@@ -5,6 +5,8 @@ import com.zaxxer.hikari.HikariDataSource
 
 import javax.sql.DataSource
 
+import ox.*
+
 import scalikejdbc.*
 
 object Store:
@@ -22,20 +24,23 @@ private final class Store(dataSource: DataSource):
   ConnectionPool.singleton( DataSourceConnectionPool(dataSource) )
 
   def addTodo(todo: Todo): Long =
-    DB localTx { implicit session =>
-      sql"insert into todo(task) values(${todo.task})"
-      .updateAndReturnGeneratedKey()
-    }
+    supervised:
+      DB localTx { implicit session =>
+        sql"insert into todo(task) values(${todo.task})"
+        .updateAndReturnGeneratedKey()
+      }
 
   def updateTodo(todo: Todo): Int =
-    DB localTx { implicit session =>
-      sql"update todo set task = ${todo.task} where id = ${todo.id}"
-      .update()
-    }
+    supervised:
+      DB localTx { implicit session =>
+        sql"update todo set task = ${todo.task} where id = ${todo.id}"
+        .update()
+      }
 
   def listTodos(): Seq[Todo] =
-    DB readOnly { implicit session =>
-      sql"select id, task from todo"
-        .map(rs => Todo( rs.long("id"), rs.string("task") ) )
-        .list()
-    }
+    supervised:
+      DB readOnly { implicit session =>
+        sql"select id, task from todo"
+          .map(rs => Todo( rs.long("id"), rs.string("task") ) )
+          .list()
+      }

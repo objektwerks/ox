@@ -7,8 +7,6 @@ import java.util.concurrent.TimeUnit
 
 import org.openjdk.jmh.annotations.{Benchmark, BenchmarkMode, Fork, Measurement, Mode, OutputTimeUnit, Scope, State, Warmup}
 
-import ox.*
-
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.AverageTime))
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
@@ -21,18 +19,15 @@ class Performance():
 
   @Benchmark
   def addTodo(): Todo =
-    supervised:
-      todo = Todo(task = UUID.randomUUID.toString)
-      todo = todo.copy(id = store.addTodo(todo))
-      todo
+    todo = Todo(task = UUID.randomUUID.toString)
+    todo = todo.copy(id = store.addTodo(todo))
+    todo
 
   @Benchmark
   def updateTodo(): Int =
-    supervised:
-      todo = todo.copy(task = UUID.randomUUID.toString)
-      store.updateTodo(todo)
+    todo = todo.copy(task = UUID.randomUUID.toString)
+    store.updateTodo(todo)
 
   @Benchmark
   def listTodos(): Seq[Todo] =
-    supervised:
-      store.listTodos()
+    store.listTodos()
