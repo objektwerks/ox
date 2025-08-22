@@ -5,7 +5,7 @@ import com.zaxxer.hikari.HikariDataSource
 
 import javax.sql.DataSource
 
-import ox.*
+import ox.supervised
 
 import scalikejdbc.*
 
