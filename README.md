@@ -42,7 +42,7 @@ Benchmark
 >OpenJDK Runtime Environment Zulu24.28+85-CA (build 24+36), **Scala 3.7.3-RC2**, **Postgresql@14**, **Ox 1.0.0**, Apple M1
 1. addTodo - 153.732
 2. updateTodo - 60.618
-3. listTodos - 735,343.828
+3. listTodos - 601,553.987
 >Total time: 616 s (10:16), 10 warmups, 10 iterations, average time in microseconds, completed **2025.8.22**
 
 Slow Select
