@@ -1,6 +1,6 @@
 Ox
 --
->Software Mill Ox feature tests using uJson, HikariCP, ScalikeJdbc, JoddMail, Postgresql, Otel and Scala 3.
+>Software Mill Ox feature tests using uJson, HikariCP, ScalikeJdbc, JoddMail, Postgresql and Scala 3.
 
 Install
 -------
