@@ -33,9 +33,7 @@ Benchmark
 >See Performance class for details.
 1. ```sbt jmh:run```
 
-Results
--------
->OpenJDK Runtime Environment Zulu24.28+85-CA (build 24+36), **Scala 3.7.3-RC2**, **Ox 1.0.0**, Apple M1
+>OpenJDK Runtime Environment Zulu24.28+85-CA (build 24+36), **Scala 3.7.3-RC2**, **Postgresql@14**, **Ox 1.0.0**, Apple M1
 1. addTodo - 124.026
 2. updateTodo - 60.618
 3. listTodos - 735,343.828
