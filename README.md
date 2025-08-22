@@ -35,8 +35,8 @@ Benchmark
 
 >OpenJDK Runtime Environment Zulu22.30+13-CA (build 22.0.1+8), **Scala 3.5.0-RC1**, , **Postgresql@14**, **Ox 0.2.1**, Apple M1
 1. addTodo - 124.026 / 33.005 **
-2. updateTodo - 60.618 / 30.721 **
-3. listTodos - 735,343.828 / 25.852 **
+2. listTodos - 735,343.828 / 25.852 **
+3. updateTodo - 60.618 / 30.721 **
 >Total time: 616 s (10:16), 10 warmups, 10 iterations, average time in microseconds, completed **2024.6.16**
 
 >OpenJDK Runtime Environment Zulu24.28+85-CA (build 24+36), **Scala 3.7.3-RC2**, **Postgresql@14**, **Ox 1.0.0**, Apple M1
