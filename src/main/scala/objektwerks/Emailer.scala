@@ -27,7 +27,7 @@ final class Emailer(config: EmailServerConfig) extends LazyLogging:
 
   private def sendEmail(recipients: List[String],
                         subject: String,
-                        message: String): Unit =
+                        message: String): Either[Throwable, Unit] =
     Using( smtpServer.createSession ) { session =>
       val email = Email.create
         .from(config.sender)
@@ -41,6 +41,6 @@ final class Emailer(config: EmailServerConfig) extends LazyLogging:
     }.recover { error =>
       logger.error("*** Emailer subject: {} to: {} failed: {}",  subject, recipients.mkString, error.getMessage)
       throw error
-    }
+    }.toEither
 
-  def send(config: EmailConfig): Unit = sendEmail(config.recipients, config.subject, config.message)
+  def send(config: EmailConfig): Either[Throwable, Unit] = sendEmail(config.recipients, config.subject, config.message)

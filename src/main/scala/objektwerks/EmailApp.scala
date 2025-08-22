@@ -12,7 +12,7 @@ object EmailApp extends OxApp:
     val emailer = Emailer( EmailServerConfig(config) )
 
     supervised:
-      val either = retryEither( Schedule.immediate )( Right( emailer.send( EmailConfig(config) ) ) )
+      val either = retryEither( Schedule.immediate )( emailer.send( EmailConfig(config) ) )
       assert( either.isRight )
 
     ExitCode.Success
