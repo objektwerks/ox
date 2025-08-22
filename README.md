@@ -42,7 +42,8 @@ Results
 >Total time: 616 s (10:16), 10 warmups, 10 iterations, average time in microseconds, completed **2024.6.16**
 
 >* Postgresql database average time, using Ox.
->** H2 in-memory database average time, not using Ox. See [ScalikeJdbc](https://github.com/objektwerks/scalikejdbc)
+
+>** H2 in-memory database average time, not using Ox.
 
 Slow Select
 -----------
