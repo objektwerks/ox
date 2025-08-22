@@ -20,5 +20,5 @@ final class TimeoutTest extends AnyFunSuite with Matchers:
 
   test("timeout option"):
     supervised:
-      val result = timeoutOption(1.milliseconds) { countFileLines(aFile) }
+      val result = timeoutOption(100.nano) { countFileLines(aFile) }
       result shouldBe None
