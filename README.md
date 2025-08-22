@@ -43,7 +43,7 @@ Benchmark
 1. addTodo - 153.732
 2. updateTodo - 107.183
 3. listTodos - 601,553.987
->Total time: 616 s (10:16), 10 warmups, 10 iterations, average time in microseconds, completed **2025.8.22**
+>Total time: 612 s (10:12), 10 warmups, 10 iterations, average time in microseconds, completed **2025.8.22**
 
 Slow Select
 -----------
