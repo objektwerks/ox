@@ -10,7 +10,7 @@ libraryDependencies ++= {
     "com.softwaremill.ox" %% "core" % oxVersion,
     "com.softwaremill.ox" %% "otel-context" % oxVersion,
     "org.scalikejdbc" %% "scalikejdbc" % "4.3.2",
-    "com.zaxxer" % "HikariCP" % "7.0.0" exclude("org.slf4j", "slf4j-api"),
+    "com.zaxxer" % "HikariCP" % "7.0.1" exclude("org.slf4j", "slf4j-api"),
     "org.postgresql" % "postgresql" % "42.7.7",
     "org.jodd" % "jodd-mail" % "7.0.1",
     "com.lihaoyi" %% "ujson" % "4.2.1",
