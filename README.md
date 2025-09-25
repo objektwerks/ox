@@ -142,3 +142,4 @@ Resources
 * [Software Mill Direct Style Scala Stack Experiment](https://www.youtube.com/watch?v=C3j4AsFcxmM)
 * [Software Mill IO Effect Tracking](https://softwaremill.com/io-effect-tracking-using-ox/)
 * [Software Mill Ox & Tapir](https://softwaremill.com/websocket-chat-using-structured-concurrency-ox-and-tapir/)
+* [Critique of JEP 505](https://softwaremill.com/critique-of-jep-505-structured-concurrency-fifth-preview/)
