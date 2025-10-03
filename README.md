@@ -66,12 +66,15 @@ todo=# explain (analyze,buffers,verbose) select id, task from todo;
 
 Postgresql
 ----------
-1. config:
+1. install: You may have to edit your .bash(rc) or .zprofile to include:
+   1. export POSTGRESQL_BIN="/opt/homebrew/Cellar/postgresql@18/18.0/bin" to
+      1. export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRAAL_VM_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$VSCODE_BIN:$COURSIER_BIN:$POSTGRESQL_BIN:$PATH
+2. config:
     1. on osx intel: /usr/local/var/postgres/postgresql.config : listen_addresses = ‘localhost’, port = 5432
     2. on osx m1: /opt/homebrew/var/postgres/postgresql.config : listen_addresses = ‘localhost’, port = 5432
-2. run:
+3. run:
     1. brew services start postgresql@18
-3. logs:
+4. logs:
     1. on osx intel: /usr/local/var/log/postgres.log
     2. on m1: /opt/homebrew/var/log/postgres.log
 
