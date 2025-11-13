@@ -15,7 +15,7 @@ libraryDependencies ++= {
     "org.jodd" % "jodd-mail" % "7.0.1",
     "com.lihaoyi" %% "ujson" % "4.3.2",
     "com.typesafe" % "config" % "1.4.3",
-    "ch.qos.logback" % "logback-classic" % "1.5.20",
+    "ch.qos.logback" % "logback-classic" % "1.5.21",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
   )
