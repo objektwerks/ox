@@ -9,7 +9,7 @@ libraryDependencies ++= {
   Seq(
     "com.softwaremill.ox" %% "core" % oxVersion,
     "com.softwaremill.ox" %% "otel-context" % oxVersion,
-    "org.scalikejdbc" %% "scalikejdbc" % "4.4.0",
+    "org.scalikejdbc" %% "scalikejdbc" % "4.4.1",
     "com.zaxxer" % "HikariCP" % "7.0.2" exclude("org.slf4j", "slf4j-api"),
     "org.postgresql" % "postgresql" % "42.7.8",
     "org.jodd" % "jodd-mail" % "7.0.1",
