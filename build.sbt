@@ -3,7 +3,7 @@ enablePlugins(JmhPlugin)
 name := "ox"
 organization := "objektwerks"
 version := "6.0.0"
-scalaVersion := "3.8.1"
+scalaVersion := "3.8.2-RC1"
 libraryDependencies ++= {
   val oxVersion = "1.0.2"
   Seq(
