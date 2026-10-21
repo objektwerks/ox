@@ -5,7 +5,7 @@ organization := "objektwerks"
 version := "6.0.0"
 scalaVersion := "3.9.0"
 libraryDependencies ++= {
-  val oxVersion = "1.0.9"
+  val oxVersion = "1.1.0"
   Seq(
     "com.softwaremill.ox" %% "core" % oxVersion,
     "com.softwaremill.ox" %% "otel-context" % oxVersion,
